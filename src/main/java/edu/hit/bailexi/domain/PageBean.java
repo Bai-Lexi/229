@@ -1,4 +1,4 @@
-package edu.hit.chaijiarui.domain;
+package edu.hit.bailexi.domain;
 
 import java.util.List;
 

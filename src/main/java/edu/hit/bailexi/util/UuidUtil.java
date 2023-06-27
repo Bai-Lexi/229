@@ -1,4 +1,4 @@
-package edu.hit.chaijiarui.util;
+package edu.hit.bailexi.util;
 
 import java.util.UUID;
 

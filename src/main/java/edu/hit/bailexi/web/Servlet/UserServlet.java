@@ -1,10 +1,10 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.hit.chaijiarui.domain.ResultInfo;
-import edu.hit.chaijiarui.domain.User;
-import edu.hit.chaijiarui.service.UserService;
-import edu.hit.chaijiarui.service.impl.UserServiceImpl;
+import edu.hit.bailexi.domain.ResultInfo;
+import edu.hit.bailexi.domain.User;
+import edu.hit.bailexi.service.UserService;
+import edu.hit.bailexi.service.impl.UserServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;

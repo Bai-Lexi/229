@@ -1,9 +1,9 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
-import edu.hit.chaijiarui.domain.PageBean;
-import edu.hit.chaijiarui.domain.Route;
-import edu.hit.chaijiarui.service.RouteService;
-import edu.hit.chaijiarui.service.impl.RouteServiceImpl;
+import edu.hit.bailexi.domain.PageBean;
+import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.service.RouteService;
+import edu.hit.bailexi.service.impl.RouteServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

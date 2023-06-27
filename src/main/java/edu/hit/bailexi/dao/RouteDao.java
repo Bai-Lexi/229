@@ -1,6 +1,6 @@
-package edu.hit.chaijiarui.dao;
+package edu.hit.bailexi.dao;
 
-import edu.hit.chaijiarui.domain.Route;
+import edu.hit.bailexi.domain.Route;
 
 import java.util.List;
 

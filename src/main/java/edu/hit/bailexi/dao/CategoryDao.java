@@ -1,5 +1,5 @@
-package edu.hit.chaijiarui.dao;
-import edu.hit.chaijiarui.domain.Category;
+package edu.hit.bailexi.dao;
+import edu.hit.bailexi.domain.Category;
 import java.util.List;
 
 public interface CategoryDao {

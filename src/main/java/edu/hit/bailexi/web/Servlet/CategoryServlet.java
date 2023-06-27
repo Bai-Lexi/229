@@ -1,8 +1,8 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
-import edu.hit.chaijiarui.domain.Category;
-import edu.hit.chaijiarui.service.CategoryService;
-import edu.hit.chaijiarui.service.impl.CategoryServiceImpl;
+import edu.hit.bailexi.domain.Category;
+import edu.hit.bailexi.service.CategoryService;
+import edu.hit.bailexi.service.impl.CategoryServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

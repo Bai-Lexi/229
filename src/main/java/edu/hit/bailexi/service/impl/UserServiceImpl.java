@@ -1,9 +1,9 @@
-package edu.hit.chaijiarui.service.impl;
+package edu.hit.bailexi.service.impl;
 
-import edu.hit.chaijiarui.service.UserService;
-import edu.hit.chaijiarui.domain.User;
-import edu.hit.chaijiarui.dao.impl.UserDaoImpl;
-import edu.hit.chaijiarui.dao.UserDao;
+import edu.hit.bailexi.service.UserService;
+import edu.hit.bailexi.domain.User;
+import edu.hit.bailexi.dao.impl.UserDaoImpl;
+import edu.hit.bailexi.dao.UserDao;
 
 public class UserServiceImpl implements UserService {
 

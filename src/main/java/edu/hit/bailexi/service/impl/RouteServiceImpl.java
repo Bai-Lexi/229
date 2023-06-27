@@ -1,10 +1,10 @@
-package edu.hit.chaijiarui.service.impl;
+package edu.hit.bailexi.service.impl;
 
-import edu.hit.chaijiarui.dao.RouteDao;
-import edu.hit.chaijiarui.dao.impl.RouteDaoImpl;
-import edu.hit.chaijiarui.domain.PageBean;
-import edu.hit.chaijiarui.domain.Route;
-import edu.hit.chaijiarui.service.RouteService;
+import edu.hit.bailexi.dao.RouteDao;
+import edu.hit.bailexi.dao.impl.RouteDaoImpl;
+import edu.hit.bailexi.domain.PageBean;
+import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.service.RouteService;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package edu.hit.chaijiarui.service;
+package edu.hit.bailexi.service;
 
-import edu.hit.chaijiarui.domain.PageBean;
-import edu.hit.chaijiarui.domain.Route;
+import edu.hit.bailexi.domain.PageBean;
+import edu.hit.bailexi.domain.Route;
 
 public interface RouteService {
     PageBean<Route> PageQuery(int cid, int currentPage, int pageSize);

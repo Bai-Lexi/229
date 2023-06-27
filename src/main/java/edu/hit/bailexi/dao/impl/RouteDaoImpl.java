@@ -1,8 +1,8 @@
-package edu.hit.chaijiarui.dao.impl;
+package edu.hit.bailexi.dao.impl;
 
-import edu.hit.chaijiarui.dao.RouteDao;
-import edu.hit.chaijiarui.domain.Route;
-import edu.hit.chaijiarui.util.JDBCUtils;
+import edu.hit.bailexi.dao.RouteDao;
+import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.util.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
