@@ -24,14 +24,6 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <!-- 日志-->
-        <!--这是一个更改-->
-        <!--这是另一个更改-->
-        <!--这是另一个更改-->
-        <!--这是另ling一个更改-->
-        <!--这是另ling一个更改-->
-        <!--这是另ling一个更改-->
-        <!--这是另一个更改-->
         <dependency>
 
             <groupId>commons-logging</groupId>
