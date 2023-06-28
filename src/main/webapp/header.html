@@ -75,8 +75,7 @@
             let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
             //遍历数组，拼接字符串（<li)
             for (let i=0; i < data.length; i++){
-                let li = '<li><a href=' + data[i].cid + '"route_list.html?cid=">' + data[i].cname + '</a></li>';
-
+                let li = '<li><a href="route_list.html?cid=' + data[i].cid + '"></a></li>';
                 lis += li;
             }
 
@@ -85,6 +84,7 @@
 
             //将lis字符串设置到ul的html内容中
             $("#category").html(lis);
+            console.log(lis)
         });
 
     });
