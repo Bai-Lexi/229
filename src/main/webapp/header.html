@@ -4,7 +4,6 @@
 <!-- 头部 start -->
 
 
-
 <header id="header">
     <div class="top_banner">
         <img src="images/top_banner.png" alt="">
@@ -28,7 +27,8 @@
                 <a href="/"><img src="images/logo2.png" alt=""></a>
             </div>
             <div class="search">
-                <label for="search_input"></label><input name="" id="search_input" type="text" placeholder="请输入路线名称" class="search_input"
+                <label for="search_input"></label><input name="" id="search_input" type="text"
+                                                         placeholder="请输入路线名称" class="search_input"
                                                          autocomplete="off">
                 <a href="javascript:" id="search-button" class="search-button">搜索</a>
             </div>
@@ -47,17 +47,17 @@
 <!-- 头部 end -->
 <!-- 首页导航 -->
 <div class="navitem">
-    <ul id="category" class="nav" >
-                <li class="nav-active"><a href="index.html">首页</a></li>
-                <li><a href="route_list.html">电子产品</a></li>
-                <li><a href="route_list.html">计生用品</a></li>
-                <li><a href="route_list.html">家具</a></li>
-                <li><a href="route_list.html">229秒杀</a></li>
-                <li><a href="route_list.html">房地产交易</a></li>
-                <li><a href="route_list.html">教育咨询</a></li>
-                <li><a href="route_list.html">哈威收费标准</a></li>
-                <li><a href="route_list.html">空调</a></li>
-<!--                <li><a href="#">好物推荐</a></li>-->
+    <ul id="category" class="nav">
+        <li class="nav-active"><a href="index.html">首页</a></li>
+        <li><a href="route_list.html">电子产品</a></li>
+        <li><a href="route_list.html">计生用品</a></li>
+        <li><a href="route_list.html">家具</a></li>
+        <li><a href="route_list.html">229秒杀</a></li>
+        <li><a href="route_list.html">房地产交易</a></li>
+        <li><a href="route_list.html">教育咨询</a></li>
+        <li><a href="route_list.html">哈威收费标准</a></li>
+        <li><a href="route_list.html">空调</a></li>
+        <!--                <li><a href="#">好物推荐</a></li>-->
     </ul>
 </div>
 <script>
@@ -74,16 +74,18 @@
             //[cid:1,cname:国内游，{},{},{}]
             let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
             //遍历数组，拼接字符串（<li)
-            for (let i=0; i < data.length; i++){
-                let li = '<li><a href="route_list.html?cid=' + data[i].cid + '"></a></li>';
+            for (let i = 0; i < data.length; i++) {
+                let li = '<li><a href="route_list.html?cid=' + data[i].cid + '&rname='
+                    + data[i].cname + '">' + data[i].cname + '</a></li>';
                 lis += li;
             }
 
             //拼接收藏排行榜
-            lis+='<li><a href="favoriterank.html">收藏排行榜</a></li>'
+            lis += '<li><a href="favoriterank.html">收藏排行榜</a></li>'
 
             //将lis字符串设置到ul的html内容中
             $("#category").html(lis);
+            console.log(lis)
         });
 
     });
