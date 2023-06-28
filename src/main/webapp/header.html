@@ -28,9 +28,9 @@
                 <a href="/"><img src="images/logo2.png" alt=""></a>
             </div>
             <div class="search">
-                <input name="" id="search_input" type="text" placeholder="请输入路线名称" class="search_input"
-                       autocomplete="off">
-                <a href="javascript:;" id="search-button" class="search-button">搜索</a>
+                <label for="search_input"></label><input name="" id="search_input" type="text" placeholder="请输入路线名称" class="search_input"
+                                                         autocomplete="off">
+                <a href="javascript:" id="search-button" class="search-button">搜索</a>
             </div>
             <div class="hottel">
                 <div class="hot_pic">
@@ -65,17 +65,17 @@
         // 查询登录用户信息
         $.get("user/findOne", {}, function (data) {
             //{uid:1,name:'李四'}
-            var msg = "欢迎回来，" + data.name;
+            let msg = "欢迎回来，" + data.name;
             $("#span_username").html(msg);
         });
 
         //查询分类数据
         $.get("category/findAll", {}, function (data) {
             //[cid:1,cname:国内游，{},{},{}]
-            var  lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
+            let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
             //遍历数组，拼接字符串（<li)
-            for (var i=0; i < data.length; i++){
-                var li = '<li><a href='+data[i].cid+'"commodity_list.html?cid=">'+data[i].cname+'</a></li>';
+            for (let i=0; i < data.length; i++){
+                let li = '<li><a href=' + data[i].cid + '"commodity_list.html?cid=">' + data[i].cname + '</a></li>';
 
                 lis += li;
             }

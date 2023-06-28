@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <meta charset="utf-8">
@@ -14,8 +14,6 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--导入angularJS文件-->
-    <script src="js/angular.min.js"></script>
     <!--导入jquery-->
     <script src="js/jquery-3.3.1.js"></script>
 
@@ -33,7 +31,7 @@
     </div>
     <div class="login-box">
         <div class="title">
-            <img src="images/login_logo.png" alt="" width="61" height="56">
+            <img src="images/login_logo.png" alt="" width="60" height="60">
             <span>COME ON WITH US</span>
         </div>
         <div class="login_inner">
@@ -42,15 +40,21 @@
             <div id="errorMsg" class="alert alert-danger"></div>
             <form id="loginForm" action="" method="post" accept-charset="utf-8">
                 <input type="hidden" name="action" value="login"/>
-                <input name="username" type="text" class="text" placeholder="请输入账号" autocomplete="off">
-                <input name="password" type="text" class="text" placeholder="请输入密码" autocomplete="off">
+                <label>
+                    <input name="username" type="text" class="text" placeholder="请输入账号" autocomplete="off">
+                </label>
+                <label>
+                    <input name="password" type="text" class="text" placeholder="请输入密码" autocomplete="off">
+                </label>
                 <div class="verify">
 
                 </div>
                 <div class="submit_btn">
                     <button type="button" id="btn_sub">Login</button>
                     <div class="auto_login">
-                        <input type="checkbox" name="" class="checkbox">
+                        <label>
+                            <input type="checkbox" name="" class="checkbox">
+                        </label>
                         <span>AUTO?</span>
                     </div>
                 </div>

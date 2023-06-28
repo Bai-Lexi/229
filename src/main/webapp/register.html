@@ -74,7 +74,9 @@
                         </td>
                         <td class="td_right gender">
                             <input type="radio" id="sex" name="sex" value="男" checked> 男
-                            <input type="radio" name="sex" value="女"> 女
+                            <label>
+                                <input type="radio" name="sex" value="女">
+                            </label> 女
                         </td>
                     </tr>
                     <tr>
@@ -121,16 +123,17 @@
     //1. 验证用户名是否符合规则
     function checkUsername() {
 
-        let username = $("#username").val();
+        let username_select = $("#username")
+        let username = username_select.val();
 
-        var reg_username = /^\w{8,20}$/;
-        var flag = reg_username.test(username);
+        let reg_username = /^\w{8,20}$/;
+        let flag = reg_username.test(username);
         if (flag) {
 
-            $("#username").css("border","");
+            username_select.css("border","");
         } else {
 
-            $("#username").css("border","1px solid red");
+            username_select.css("border","1px solid red");
         }
         return flag;
     }
@@ -138,17 +141,18 @@
     //2. 验证密码是否符合规则
     function checkPassword() {
 
-        let password = $("#password").val();
+        let passwd_select = $("#password")
+        let password = passwd_select.val();
 
-        var reg_password = /^\w{8,20}$/;
+        let reg_password = /^\w{8,20}$/;
 
-        var flag = reg_password.test(password);
+        let flag = reg_password.test(password);
         if (flag) {
 
-            $("#password").css("border","");
+            passwd_select.css("border","");
         } else {
 
-            $("#password").css("border","1px solid red");
+            passwd_select.css("border","1px solid red");
         }
         return flag;
     }
@@ -157,16 +161,17 @@
     //3. 校验邮箱
     function checkEmail() {
 
-        let email = $("#email").val();
+        let email_select = $("#email")
+        let email = email_select.val();
 
-        var reg_email = /^\w+@\w+\.\w+$/;
-        var flag = reg_email.test(email);
+        let reg_email = /^\w+@\w+\.\w+$/;
+        let flag = reg_email.test(email);
         if (flag) {
 
-            $("#email").css("border","");
+            email_select.css("border","");
         } else {
 
-            $("#email").css("border","1px solid red");
+            email_select.css("border","1px solid red");
         }
         return flag;
     }
@@ -174,16 +179,17 @@
     //4. 验证手机号是否符合规则
     function checkTelephone() {
 
-        let telephone = $("#telephone").val();
+        let telephone_select = $("#telephone")
+        let telephone = telephone_select.val();
 
-        var reg_telephone = /^\d{11}$/;
-        var flag = reg_telephone.test(telephone);
+        let reg_telephone = /^\d{11}$/;
+        let flag = reg_telephone.test(telephone);
         if (flag) {
 
-            $("#telephone").css("border","");
+            telephone_select.css("border","");
         } else {
 
-            $("#telephone").css("border","1px solid red");
+            telephone_select.css("border","1px solid red");
         }
         return flag;
     }
@@ -191,16 +197,17 @@
     //4. 验证姓名是否符合规则
     function checkName() {
 
-        let name = $("#name").val();
+        let name_select = $("#name")
+        let name = name_select.val();
 
 
-        var flag = Object.keys(name);
+        let flag = Object.keys(name);
         if (flag) {
 
-            $("#name").css("border","");
+            name_select.css("border","");
         } else {
 
-            $("#name").css("border","1px solid red");
+            name_select.css("border","1px solid red");
         }
         return flag;
     }
@@ -208,16 +215,17 @@
     //4. 验证姓名是否符合规则
     function checkBirthday() {
 
-        let birthday = $("#birthday").val();
+        let birth_select = $("#birthday")
+        let birthday = birth_select.val();
 
 
-        var flag = Object.keys(birthday);
+        let flag = Object.keys(birthday);
         if (flag) {
 
-            $("#birthday").css("border","");
+            birth_select.css("border","");
         } else {
 
-            $("#birthday").css("border","1px solid red");
+            birth_select.css("border","1px solid red");
         }
         return flag;
     }
