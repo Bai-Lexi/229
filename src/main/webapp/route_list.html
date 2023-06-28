@@ -14,9 +14,9 @@
     <script>
         $(function () {
             //获取cid的参数值
-            var cid = getParameter("cid");
+            let cid = getParameter("cid");
             //获取rname的参数值
-            var rname = getParameter("rname");
+            let rname = getParameter("rname");
             if (rname) {
                 rname = window.decodeURIComponent(rname);
             }
@@ -31,18 +31,19 @@
             $.get("route/pageQuery", {cid: cid, currentPage: currentPage,rname:rname}, function (pb) {
                 // 解析pageBean中的数据，将其展示到页面上
                 // 1. 展示的第一部分：分页工具条
-                //1.1 展示总页码和总记录数
+                let i;
+//1.1 展示总页码和总记录数
                 $("#totalPage").html(pb.totalPage);
                 $("#totalCount").html(pb.totalCount);
                 //1.2 展示分页页码详细情况
-                var lis = "";
-                var fristPage = '<li onclick="javascript:load(' + cid + ',1,\'' + rname + '\')"><a href="javascript:void(0)">首页</a></li>';
+                let lis = "";
+                let fristPage = '<li onclick="load(' + cid + ',1,\'' + rname + '\')"><a href="javascript:void(0)">首页</a></li>';
                 // 上一页
-                var beforeNum = pb.currentPage - 1;
+                let beforeNum = pb.currentPage - 1;
                 if (beforeNum <= 0) {
                     beforeNum = 1;
                 }
-                var beforePage = '<li  onclick="javascript:load(' + cid + ',' + beforeNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">上一页</a></li>';
+                let beforePage = '<li  onclick="load(' + cid + ',' + beforeNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">上一页</a></li>';
 
                 lis += fristPage;
                 lis += beforePage;
@@ -53,8 +54,8 @@
                    3.如果后边不足4个，前边补齐10个
                */
                 // 定义开始位置begin,结束位置 end
-                var begin; // 开始位置
-                var end; //  结束位置
+                let begin; // 开始位置
+                let end; //  结束位置
 
                 //1.要显示10个页码
                 if (pb.totalPage < 10) {
@@ -82,25 +83,25 @@
                 }
 
 
-                for (var i = begin; i <= end; i++) {
-                    var li;
+                for (i = begin; i <= end; i++) {
+                    let li;
                     // 当前页码是否等于i
-                    if (pb.currentPage == i) {
-                        li = '<li class="curPage" onclick="javascript:load(' + cid + ',' + i + ',\'' + rname + '\')"><a href="javascript:void(0)">' + i + '</a></li>';
+                    if (pb.currentPage === i) {
+                        li = '<li class="curPage" onclick="load(' + cid + ',' + i + ',\'' + rname + '\')"><a href="javascript:void(0)">' + i + '</a></li>';
                     } else {
                         // 创建页码的li
-                        li = '<li onclick="javascript:load(' + cid + ',' + i + ',\'' + rname + '\')"><a href="javascript:void(0)">' + i + '</a></li>';
+                        li = '<li onclick="load(' + cid + ',' + i + ',\'' + rname + '\')"><a href="javascript:void(0)">' + i + '</a></li>';
                     }
                     lis += li;
                 }
 
-                var nextPageNum = pb.currentPage + 1;
+                let nextPageNum = pb.currentPage + 1;
                 if (nextPageNum >= pb.totalPage) {
                     nextPageNum = pb.totalPage;
                 }
                 // alert("pb.totalPage = "+pb.totalPage+"; pb.currentPage = " +  pb.currentPage + "nextPageNum =" + nextPageNum);
-                var nextPage = '<li  onclick="javascript:load(' + cid + ',' + nextPageNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">下一页</a></li>';
-                var lastPage = '<li  onclick="javascript:load(' + cid + ',' + pb.totalPage + ',\'' + rname + '\')" ><a href="javascript:void(0)">末页</a></li>';
+                let nextPage = '<li  onclick="load(' + cid + ',' + nextPageNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">下一页</a></li>';
+                let lastPage = '<li  onclick="load(' + cid + ',' + pb.totalPage + ',\'' + rname + '\')" ><a href="javascript:void(0)">末页</a></li>';
                 lis += nextPage;
                 lis += lastPage;
 
@@ -108,13 +109,13 @@
                 $("#pageNum").html(lis);
 
                 //2. 展示的第二部分：列表数据的展示
-                var route_lis = "";
-                for (var i = 0; i < pb.list.length; i++) {
+                let route_lis = "";
+                for (i = 0; i < pb.list.length; i++) {
                     //获取{rid：1,"rname": "【旅展 半价特惠 重走丝路•漫游宁夏 双飞4天】",}
-                    var route = pb.list[i];
-                    var li_inRoute = ' </li>\n' +
+                    let route = pb.list[i];
+                    let li_inRoute = ' </li>\n' +
                         ' <li>\n' +
-                        '     <div class="img"><img src="' + route.rimage + '" style="width:299px"></div>\n' +
+                        '     <div class="img"><img src="' + route.rimage + '" style="width:299px" alt=""></div>\n' +
                         '     <div class="text1">\n' +
                         '         <p>' + route.rname + '</p>\n' +
                         '         <br/>\n' +
@@ -126,7 +127,7 @@
                         '             <span>' + route.price + '</span>\n' +
                         '             <span>起</span>\n' +
                         '         </p>\n' +
-                        '         <p><a href='+route.rid+'"route_detail.html?rid=">查看详情</a></p>\n' +
+                        '         <p><a href=' + route.rid + '"route_detail.html?rid=">查看详情</a></p>\n' +
                         '     </div>\n' +
                         ' </li>';
                     route_lis += li_inRoute;
@@ -279,8 +280,8 @@
                         <li><a href="#">8</a></li>
                         <li><a href="#">9</a></li>
                         <li><a href="#">10</a></li>
-                        <li class="threeword"><a href="javascript:;">下一页</a></li>
-                        <li class="threeword"><a href="javascript:;">末页</a></li>
+                        <li class="threeword"><a href="javascript:">下一页</a></li>
+                        <li class="threeword"><a href="javascript:">末页</a></li>
                     </ul>
                 </div>
             </div>
