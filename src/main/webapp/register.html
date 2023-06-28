@@ -126,14 +126,14 @@
         let username_select = $("#username")
         let username = username_select.val();
 
-        let reg_username = /^\w{8,20}$/;
+        let reg_username = /^\w{2,12}$/;
         let flag = reg_username.test(username);
         if (flag) {
 
-            username_select.css("border","");
+            username_select.css("border", "");
         } else {
 
-            username_select.css("border","1px solid red");
+            username_select.css("border", "1px solid red");
         }
         return flag;
     }
@@ -149,10 +149,10 @@
         let flag = reg_password.test(password);
         if (flag) {
 
-            passwd_select.css("border","");
+            passwd_select.css("border", "");
         } else {
 
-            passwd_select.css("border","1px solid red");
+            passwd_select.css("border", "1px solid red");
         }
         return flag;
     }
@@ -168,10 +168,10 @@
         let flag = reg_email.test(email);
         if (flag) {
 
-            email_select.css("border","");
+            email_select.css("border", "");
         } else {
 
-            email_select.css("border","1px solid red");
+            email_select.css("border", "1px solid red");
         }
         return flag;
     }
@@ -182,14 +182,14 @@
         let telephone_select = $("#telephone")
         let telephone = telephone_select.val();
 
-        let reg_telephone = /^\d{11}$/;
+        let reg_telephone = /^(\+\d{2})?\d{11}$/;
         let flag = reg_telephone.test(telephone);
         if (flag) {
 
-            telephone_select.css("border","");
+            telephone_select.css("border", "");
         } else {
 
-            telephone_select.css("border","1px solid red");
+            telephone_select.css("border", "1px solid red");
         }
         return flag;
     }
@@ -200,14 +200,14 @@
         let name_select = $("#name")
         let name = name_select.val();
 
-
-        let flag = Object.keys(name);
+        let reg_name = /^(([a-zA-Z+.?·a-zA-Z]{2,30}(\s+[a-zA-Z+.?·a-zA-Z]{2,30})?$)|([\u4e00-\u9fa5+·?\u4e00-\u9fa5]{2,4}$))/
+        let flag = reg_name.test(name);
         if (flag) {
 
-            name_select.css("border","");
+            name_select.css("border", "");
         } else {
 
-            name_select.css("border","1px solid red");
+            name_select.css("border", "1px solid red");
         }
         return flag;
     }
@@ -218,28 +218,27 @@
         let birth_select = $("#birthday")
         let birthday = birth_select.val();
 
-
         let flag = Object.keys(birthday);
         if (flag) {
 
-            birth_select.css("border","");
+            birth_select.css("border", "");
         } else {
 
-            birth_select.css("border","1px solid red");
+            birth_select.css("border", "1px solid red");
         }
         return flag;
     }
-    // 当表单提交时,调用所有的校验方法
-    $(function (){
-        $("#registerForm").submit(function (){
-            if(checkUsername() && checkPassword() && checkEmail() && checkTelephone() && checkName() && checkBirthday())
-            {
-                $.post("user/regist",$(this).serialize(),function (data){
 
-                    if(data.flag) {
+    // 当表单提交时,调用所有的校验方法
+    $(function () {
+        $("#registerForm").submit(function () {
+            if (checkUsername() && checkPassword() && checkEmail() && checkTelephone() && checkName() && checkBirthday()) {
+                $.post("user/regist", $(this).serialize(), function (data) {
+
+                    if (data.flag) {
                         //注册成功，跳转成功页面
-                        location.href="register_ok.html";
-                    }else{
+                        location.href = "register_ok.html";
+                    } else {
                         //注册失败
                         $("#errorMsg").html(data.errorMsg);
                     }
