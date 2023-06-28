@@ -49,22 +49,32 @@ a {
   margin-left: 390px;
 }
 .page_one .xinxi .left > ul li {
-  width: 100%;
-  height: 170px;
+  margin-left: 20px;
+  display:inline-block;
+  cursor: pointer;
+  background-color:  #f7f7f7;
+  width: 270px;
+  height: 360px;
   border: 1px solid #eee;
   border-left: 0;
   margin-bottom: 15px;
   overflow: hidden;
 }
 .page_one .xinxi .left > ul li .img {
-  width: 300px;
-  height: 170px;
+
+  margin-top: 20px;
+  width: 270px;
+  height: 300px;
   float: left;
 }
+.page_one img{
+  margin-left: 20px;
+  width: 230px;
+}
 .page_one .xinxi .left > ul li .text1 {
-  width: 330px; 
+  text-align: center;
+  width: 270px;
   float: left;
-  padding: 20px;
   color: #a3a3a3;
   font-size: 14px;
 }
@@ -74,21 +84,21 @@ a {
   margin-bottom: 5px;
 }
 .page_one .xinxi .left > ul li .price {
-  width: 215px;
+  width: 270px;
   text-align: center;
   float: left;
   height: 95px;
   border-left: 1px solid #eee;
-  margin-top: 35px;
+  margin-top: 5px;
   font-size: 16px;
 }
 .page_one .xinxi .left > ul li .price p {
   line-height: 1;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .page_one .xinxi .left > ul li .price .price_num {
   line-height: 1;
-  font-size: 30px;
+  font-size: 20px;
   color: #ff4848;
 }
 .page_one .xinxi .left > ul li .price .price_num span:nth-of-type(3) {
@@ -115,7 +125,6 @@ a {
   height: 460px;
   float: right;
   background-color: #f7f7f7;
-  padding: 8px;
   padding-top: 0;
   font-size: 14px;
 }
@@ -152,9 +161,7 @@ a {
 .page_one .xinxi > .right ul li .right {
   width: 50%;
   float: right;
-  padding-left: 4px;
   box-sizing: border-box;
-  padding-top: 7px;
 }
 .page_one .xinxi > .right ul li .right p:nth-of-type(1) {
   overflow: hidden;
@@ -163,11 +170,26 @@ a {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   font-weight: bold;
-  margin-bottom: 3px;
+
 }
 .page_one .xinxi > .right ul li .right p > span {
   font-size: 16px;
   color: #ff4848;
   font-weight: bold;
-  margin-left: 2px;
+}
+.left li:hover {
+  z-index: 2;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+  transition:all .25s;
+}
+.right img{
+  margin-left: 0px;
+  width: 100px;
+}
+.risp{
+  margin-top:-70px;
+  margin-left: 0px;
 }
