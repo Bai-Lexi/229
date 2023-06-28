@@ -9,8 +9,5 @@
         <module name="Bailexi" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bailexi" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
