@@ -38,16 +38,16 @@ public class RouteDaoImpl implements RouteDao {
     public List<Route> findByPage(int cid, int start, int pageSize,String rname) {
         //String sql = "select * from tab_route where cid = ? limit ? , ?";
         //定义sql模板
-        String sql="select * from tab_route where 1=1 ";
+        String sql="select * from tab_route ";
         StringBuilder sb=new StringBuilder(sql);
 
         List params=new ArrayList();
         if(cid!=0){
-            sb.append(" and cid = ? ");
+            sb.append(" where cid = ? ");
             params.add(cid);
         }
         if(!rname.equals("null") && rname.length()>0){
-            sb.append(" and rname like ? ");
+            sb.append(" where rname like ? ");
             params.add("%"+rname+"%");
         }
         sb.append(" limit ? , ? ");//分页条件
