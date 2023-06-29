@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 @WebServlet("/route/*")
 public class RouteServlet extends BaseServlet {
@@ -23,9 +24,13 @@ public class RouteServlet extends BaseServlet {
         String pageSizeStr = request.getParameter("pageSize");
         String cidStr = request.getParameter("cid");
 
+        //接收rname
+        String rnmae=request.getParameter("rname");
+        rnmae=new String(rnmae.getBytes("iso-8859-1"),"utf-8");
+
         int cid =0;//类别id
         //处理参数
-        if(cidStr != null && cidStr.length() > 0){
+        if(cidStr != null && cidStr.length() > 0 && !"null".equals(cidStr)){
             cid = Integer.parseInt(cidStr);
         }
 
@@ -45,7 +50,7 @@ public class RouteServlet extends BaseServlet {
 
         //调用service查询PageBean对象
 
-        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize);
+        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize,rnmae);
 
         //将PageBean对象序列化为json返回
         writeValue(pageBean,response);

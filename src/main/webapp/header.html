@@ -29,7 +29,7 @@
             <div class="search">
                 <label for="search_input">
                     <input name="" id="search_input" type="text"
-                           placeholder="请输入路线名称" class="search_input"
+                           placeholder="请输入商品关键字" class="search_input"
                            autocomplete="off">
                 </label>
                 <a href="javascript:" id="search-button" class="search-button">搜索</a>
@@ -78,8 +78,9 @@
             let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
             //遍历数组，拼接字符串（<li)
             for (let i = 0; i < data.length; i++) {
-                let li = '<li><a href="route_list.html?cid=' + data[i].cid + '&rname='
-                    + data[i].cname + '">' + data[i].cname + '</a></li>';
+                // let li = '<li><a href="route_list.html?cid=' + data[i].cid + '&rname='
+                //     + data[i].cname + '">' + data[i].cname + '</a></li>';
+                var li = '<li><a href="route_list.html?cid='+data[i].cid+'">'+data[i].cname+'</a></li>';
                 lis += li;
             }
 
@@ -89,6 +90,14 @@
             //将lis字符串设置到ul的html内容中
             $("#category").html(lis);
         });
+
+        $("#search-button").click(function (){
+            var rname=$("#search_input").val();
+            //alert(rname);
+            var cid=getParameter("cid")
+            //alert(cid);
+            location.href="http://localhost:8080/travel/route_list.html?cid="+cid+"&rname="+rname;
+        })
 
     });
 </script>
