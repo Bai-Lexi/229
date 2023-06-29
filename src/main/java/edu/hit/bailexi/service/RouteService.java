@@ -6,4 +6,11 @@ import edu.hit.bailexi.domain.Route;
 public interface RouteService {
     PageBean<Route> PageQuery(int cid, int currentPage, int pageSize, String rname);
 
+    /**
+     * 根据id查询
+     * @param rid
+     * @return
+     */
+    public Route findOne(String rid);
+
 }

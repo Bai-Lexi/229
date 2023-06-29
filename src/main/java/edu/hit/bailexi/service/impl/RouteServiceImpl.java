@@ -1,16 +1,23 @@
 package edu.hit.bailexi.service.impl;
 
 import edu.hit.bailexi.dao.RouteDao;
+import edu.hit.bailexi.dao.RouteImgDao;
+import edu.hit.bailexi.dao.SellerDao;
 import edu.hit.bailexi.dao.impl.RouteDaoImpl;
+import edu.hit.bailexi.dao.impl.RouteImgDaoImpl;
+import edu.hit.bailexi.dao.impl.SellerDaoImpl;
 import edu.hit.bailexi.domain.PageBean;
 import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.domain.RouteImg;
+import edu.hit.bailexi.domain.Seller;
 import edu.hit.bailexi.service.RouteService;
 
 import java.util.List;
 
 public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = (RouteDao) new RouteDaoImpl();
-
+    private RouteImgDao routeImgDao = new RouteImgDaoImpl();
+    private SellerDao sellerDao = new SellerDaoImpl();
     @Override
     public PageBean<Route> PageQuery(int cid, int currentPage, int pageSize, String rname) {
         //封装PageBean
@@ -35,6 +42,20 @@ public class RouteServiceImpl implements RouteService {
 
 
         return pb;
+    }
+
+    @Override
+    public Route findOne(String rid) {
+        //1.根据id去route中查询route对象
+        Route route = routeDao.findOne(Integer.parseInt(rid));
+        //2.根据route的id查询图片集合信息
+        List<RouteImg>routeImgList = routeImgDao.findByRid(Integer.parseInt(rid));
+        //2.2将集合设置到route对象
+        route.setRouteImgList(routeImgList);
+        //3.根据route的sid(商家)查询卖家的信息
+        Seller seller = sellerDao.findById(route.getSid());
+        route.setSeller(seller);
+        return route;
     }
 
 }

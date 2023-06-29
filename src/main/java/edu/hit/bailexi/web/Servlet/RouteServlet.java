@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 @WebServlet("/route/*")
 public class RouteServlet extends BaseServlet {
@@ -54,6 +53,25 @@ public class RouteServlet extends BaseServlet {
 
         //将PageBean对象序列化为json返回
         writeValue(pageBean,response);
+    }
+
+
+    /**
+     * 根据id查询一个商品的详细信息
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //1.接受参数id
+
+        String rid = request.getParameter("rid");
+        //2.调用service查询route对象
+        Route route = service.findOne(rid);
+        //3.转为json写回客户端
+        writeValue(route,response);
     }
 
 }
