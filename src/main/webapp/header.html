@@ -66,8 +66,10 @@
         // 查询登录用户信息
         $.get("user/findOne", {}, function (data) {
             //{uid:1,name:'李四'}
-            let msg = "欢迎回来，" + data.name;
-            $("#span_username").html(msg);
+            if (data != null){
+                let msg = "欢迎回来，" + data.name;
+                $("#span_username").html(msg);
+            }
         });
 
         //查询分类数据

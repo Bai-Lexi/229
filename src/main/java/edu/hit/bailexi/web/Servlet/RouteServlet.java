@@ -40,7 +40,7 @@ public class RouteServlet extends BaseServlet {
         if(pageSizeStr != null && pageSizeStr.length() >0){
             pageSize = Integer.parseInt(pageSizeStr);
         }else{
-            pageSize = 5;
+            pageSize = 6;
         }
 
         //调用service查询PageBean对象
