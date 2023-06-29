@@ -25,8 +25,8 @@ public class RouteServlet extends BaseServlet {
         String cidStr = request.getParameter("cid");
 
         //接收rname
-        String rnmae=request.getParameter("rname");
-        rnmae=new String(rnmae.getBytes("iso-8859-1"),"utf-8");
+        String rname=request.getParameter("rname");
+        rname=new String(rname.getBytes("iso-8859-1"),"utf-8");
 
         int cid =0;//类别id
         //处理参数
@@ -50,7 +50,7 @@ public class RouteServlet extends BaseServlet {
 
         //调用service查询PageBean对象
 
-        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize,rnmae);
+        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize,rname);
 
         //将PageBean对象序列化为json返回
         writeValue(pageBean,response);
