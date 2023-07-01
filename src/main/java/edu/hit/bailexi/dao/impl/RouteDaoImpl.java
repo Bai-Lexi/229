@@ -11,24 +11,33 @@ import java.util.List;
 
 public class RouteDaoImpl implements RouteDao {
 
-    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
+    private final JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 
     @Override
     public int findTotalCount(int cid,String rname) {
         String sql="select count(*) from tab_route ";
         StringBuilder sb=new StringBuilder(sql);
+        Integer result;
 
-        List params=new ArrayList();
         if(cid!=0){
             sb.append(" where cid = ? ");
             sql=sb.toString();
-            return template.queryForObject(sql, Integer.class, cid);
+
+            if ((result = template.queryForObject(sql, Integer.class, cid)) != null) {
+                return result;
+            } else {
+                return 0;
+            }
         }
         if(!rname.equals("null") && rname.length()>0){
             sb.append(" where rname like ? ");
             rname = "%"+rname+"%";
             sql=sb.toString();
-            return template.queryForObject(sql, Integer.class, rname);
+            if ((result = template.queryForObject(sql, Integer.class, rname)) != null) {
+                return result;
+            } else {
+                return 0;
+            }
         }
 
         return 0;
@@ -41,7 +50,7 @@ public class RouteDaoImpl implements RouteDao {
         String sql="select * from tab_route ";
         StringBuilder sb=new StringBuilder(sql);
 
-        List params=new ArrayList();
+        List<Object> params=new ArrayList<>();
         if(cid!=0){
             sb.append(" where cid = ? ");
             params.add(cid);
@@ -54,12 +63,12 @@ public class RouteDaoImpl implements RouteDao {
         params.add(start);
         params.add(pageSize);
         sql=sb.toString();
-        return template.query(sql,new BeanPropertyRowMapper<Route>(Route.class),params.toArray());
+        return template.query(sql,new BeanPropertyRowMapper<>(Route.class),params.toArray());
     }
 
     @Override
     public Route findOne(int rid) {
         String sql = "select * from tab_route where rid = ?";
-        return template.queryForObject(sql,new BeanPropertyRowMapper<Route>(Route.class),rid);
+        return template.queryForObject(sql, new BeanPropertyRowMapper<>(Route.class),rid);
     }
 }
