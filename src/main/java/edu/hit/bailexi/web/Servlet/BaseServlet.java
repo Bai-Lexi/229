@@ -1,4 +1,4 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,15 +27,11 @@ public class BaseServlet extends HttpServlet {
             //执行方法
 
             method.invoke(this,req,resp);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
-        }
+    }
 
         //直接将传入的对象序列化为json，并写回客户端
         public void writeValue(Object obj,HttpServletResponse response) throws IOException {

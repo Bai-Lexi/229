@@ -1,6 +1,6 @@
-package edu.hit.chaijiarui.service;
+package edu.hit.bailexi.service;
 
-import edu.hit.chaijiarui.domain.Category;
+import edu.hit.bailexi.domain.Category;
 
 import java.util.List;
 

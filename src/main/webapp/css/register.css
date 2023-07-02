@@ -1,7 +1,8 @@
 .rg_layout{
 	width: 100%;
 	height: 585px;
-	background: url(../images/register_bg.png) no-repeat center;
+	background: url(https://ts1.cn.mm.bing.net/th/id/R-C.d8f53bebe769a8699543bd55405a096e?rik=oYTj93B2nZvp6Q&riu=http%3a%2f%2fwww.wumeihuojia.com%2fuploadfile%2fimage%2f20200618%2f1592467645881506.jpg&ehk=UvZQA9lF14hPaymE41URlYmYjf80buaXyvXlS8QxNLk%3d&risl=&pid=ImgRaw&r=0
+	) no-repeat center;
 	background-size: 100% 780px;
 	overflow: hidden;
 }
@@ -12,6 +13,10 @@
 	margin:24px auto;
 	border:8px solid #eeeeee;
 	box-sizing: border-box;
+}
+
+.rg_form{
+	background: rgba(255,255,255,0.5);
 }
 
 .rg_layout .rg_form > .rg_form_left{
@@ -35,12 +40,12 @@
 
 .rg_form > .rg_form_left > p:first-child{
 	font-size: 20px;
-	color:#ffcd26;
+	color:red;
 	
 }
 .rg_form > .rg_form_left > p:last-child{
 	font-size: 20px;
-	color: #a6a6a6;
+	color: #2D2736;
 }
 .rg_form > .rg_form_center .td_left{
 	width: 65px;
@@ -82,7 +87,7 @@
 	width: 120px;
 	height: 36px;
 	line-height: 36px;
-	background-color: #ffc900;
+	background-color: #FEA443;
 	font-size: 14px;
 }
 .rg_form > .rg_form_right >p{

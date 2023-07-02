@@ -1,9 +1,9 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
-import edu.hit.chaijiarui.domain.PageBean;
-import edu.hit.chaijiarui.domain.Route;
-import edu.hit.chaijiarui.service.RouteService;
-import edu.hit.chaijiarui.service.impl.RouteServiceImpl;
+import edu.hit.bailexi.domain.PageBean;
+import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.service.RouteService;
+import edu.hit.bailexi.service.impl.RouteServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,9 +23,13 @@ public class RouteServlet extends BaseServlet {
         String pageSizeStr = request.getParameter("pageSize");
         String cidStr = request.getParameter("cid");
 
+        //接收rname
+        String rname=request.getParameter("rname");
+        rname=new String(rname.getBytes("iso-8859-1"),"utf-8");
+
         int cid =0;//类别id
         //处理参数
-        if(cidStr != null && cidStr.length() > 0){
+        if(cidStr != null && cidStr.length() > 0 && !"null".equals(cidStr)){
             cid = Integer.parseInt(cidStr);
         }
 
@@ -40,15 +44,34 @@ public class RouteServlet extends BaseServlet {
         if(pageSizeStr != null && pageSizeStr.length() >0){
             pageSize = Integer.parseInt(pageSizeStr);
         }else{
-            pageSize = 5;
+            pageSize = 6;
         }
 
         //调用service查询PageBean对象
 
-        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize);
+        PageBean<Route> pageBean = service.PageQuery(cid,currentPage,pageSize,rname);
 
         //将PageBean对象序列化为json返回
         writeValue(pageBean,response);
+    }
+
+
+    /**
+     * 根据id查询一个商品的详细信息
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //1.接受参数id
+
+        String rid = request.getParameter("rid");
+        //2.调用service查询route对象
+        Route route = service.findOne(rid);
+        //3.转为json写回客户端
+        writeValue(route,response);
     }
 
 }

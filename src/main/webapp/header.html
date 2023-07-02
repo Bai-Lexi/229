@@ -4,7 +4,6 @@
 <!-- 头部 start -->
 
 
-
 <header id="header">
     <div class="top_banner">
         <img src="images/top_banner.png" alt="">
@@ -17,9 +16,6 @@
         </div>
         <!-- 登录状态  -->
         <div class="login">
-            <span id="span_username"></span>
-            <a href="myfavorite.html" class="collection">我的收藏</a>
-            <a href="javascript:location.href='user/exit'">退出</a>
         </div>
     </div>
     <div class="header_wrap">
@@ -28,9 +24,12 @@
                 <a href="/"><img src="images/logo2.png" alt=""></a>
             </div>
             <div class="search">
-                <input name="" id="search_input" type="text" placeholder="请输入路线名称" class="search_input"
-                       autocomplete="off">
-                <a href="javascript:;" id="search-button" class="search-button">搜索</a>
+                <label for="search_input">
+                    <input name="" id="search_input" type="text"
+                           placeholder="请输入商品关键字" class="search_input"
+                           autocomplete="off">
+                </label>
+                <a href="javascript:" id="search-button" class="search-button">搜索</a>
             </div>
             <div class="hottel">
                 <div class="hot_pic">
@@ -38,7 +37,7 @@
                 </div>
                 <div class="hot_tel">
                     <p class="hot_time">客服热线(8:00-17:00)</p>
-                    <p class="hot_num">19563187982</p>
+                    <p class="hot_num">19999999999</p>
                 </div>
             </div>
         </div>
@@ -47,17 +46,16 @@
 <!-- 头部 end -->
 <!-- 首页导航 -->
 <div class="navitem">
-    <ul id="category" class="nav" >
-        <!--        <li class="nav-active"><a href="index.html">首页</a></li>
-                <li><a href="route_list.html">门票</a></li>
-                <li><a href="route_list.html">酒店</a></li>
-                <li><a href="route_list.html">香港车票</a></li>
-                <li><a href="route_list.html">出境游</a></li>
-                <li><a href="route_list.html">国内游</a></li>
-                <li><a href="route_list.html">港澳游</a></li>
-                <li><a href="route_list.html">抱团定制</a></li>
-                <li><a href="route_list.html">全球自由行</a></li>
-                <li><a href="favoriterank.html">收藏排行榜</a></li>-->
+    <ul id="category" class="nav">
+        <li class="nav-active"><a href="index.html">首页</a></li>
+        <li><a href="route_list.html">电子产品</a></li>
+        <li><a href="route_list.html">计生用品</a></li>
+        <li><a href="route_list.html">家具</a></li>
+        <li><a href="route_list.html">229秒杀</a></li>
+        <li><a href="route_list.html">房地产交易</a></li>
+        <li><a href="route_list.html">教育咨询</a></li>
+        <li><a href="route_list.html">哈威收费标准</a></li>
+        <li><a href="route_list.html">空调</a></li>
     </ul>
 </div>
 <script>
@@ -65,27 +63,34 @@
         // 查询登录用户信息
         $.get("user/findOne", {}, function (data) {
             //{uid:1,name:'李四'}
-            var msg = "欢迎回来，" + data.name;
-            $("#span_username").html(msg);
+            if (data != null){
+                let msg = "<span id=\"span_username\">" + "欢迎回来，" + data.name + "</span>\n" +
+                    "<a href=\"myfavorite.html\" class=\"collection\">我的收藏</a>\n" +
+                    "<a href=\"javascript:location.href='user/exit'\">退出</a>";
+                $(".login").html(msg);
+            }
         });
 
         //查询分类数据
         $.get("category/findAll", {}, function (data) {
-            //[cid:1,cname:国内游，{},{},{}]
-            var  lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
+            let lis = '<li class="nav-active"><a href="index.html">首页</a></li>';
             //遍历数组，拼接字符串（<li)
-            for (var i=0; i < data.length; i++){
-                var li = '<li><a href="route_list.html?cid='+data[i].cid+'">'+data[i].cname+'</a></li>';
-
+            for (let i = 0; i < data.length; i++) {
+                let li = '<li><a href="route_list.html?cid='+data[i].cid+'">'+data[i].cname+'</a></li>';
                 lis += li;
             }
 
             //拼接收藏排行榜
-            lis+='<li><a href="favoriterank.html">收藏排行榜</a></li>'
+            lis += '<li><a href="favoriterank.html">收藏排行榜</a></li>'
 
             //将lis字符串设置到ul的html内容中
             $("#category").html(lis);
         });
+
+        $("#search-button").click(function (){
+            var rname=$("#search_input").val();
+            location.href="http://localhost:8080/travel/route_list.html?cid=0&rname="+rname;
+        })
 
     });
 </script>

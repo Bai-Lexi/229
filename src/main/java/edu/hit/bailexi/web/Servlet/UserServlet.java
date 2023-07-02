@@ -1,10 +1,10 @@
-package edu.hit.chaijiarui.web.Servlet;
+package edu.hit.bailexi.web.Servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.hit.chaijiarui.domain.ResultInfo;
-import edu.hit.chaijiarui.domain.User;
-import edu.hit.chaijiarui.service.UserService;
-import edu.hit.chaijiarui.service.impl.UserServiceImpl;
+import edu.hit.bailexi.domain.ResultInfo;
+import edu.hit.bailexi.domain.User;
+import edu.hit.bailexi.service.UserService;
+import edu.hit.bailexi.service.impl.UserServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
@@ -23,16 +23,14 @@ public class UserServlet extends BaseServlet {
     private UserService service = new UserServiceImpl();
 
     //注册功能
-    public void regist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void regist(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取数据
         Map<String, String[]> map = request.getParameterMap();
         //封装对象
         User user = new User();
         try {
             BeanUtils.populate(user, map);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         //调用service完成注册
@@ -57,16 +55,14 @@ public class UserServlet extends BaseServlet {
 
 
     //登录功能
-    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取数据
         Map<String, String[]> map = request.getParameterMap();
         //封装对象
         User user = new User();
         try {
             BeanUtils.populate(user, map);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
         //调用service查询
@@ -94,7 +90,7 @@ public class UserServlet extends BaseServlet {
     }
 
     //查询单个对象
-    public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void findOne(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Object user = request.getSession().getAttribute("user");
 
         /*ObjectMapper mapper = new ObjectMapper();
@@ -104,7 +100,7 @@ public class UserServlet extends BaseServlet {
     }
 
     //退出功能
-    public void exit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void exit(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //销毁session
         request.getSession().invalidate();
 

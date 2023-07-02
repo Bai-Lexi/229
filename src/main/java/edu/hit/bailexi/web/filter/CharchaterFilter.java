@@ -1,4 +1,4 @@
-package edu.hit.chaijiarui.web.filter;
+package edu.hit.bailexi.web.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

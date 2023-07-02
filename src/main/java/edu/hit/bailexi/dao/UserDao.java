@@ -1,6 +1,6 @@
-package edu.hit.chaijiarui.dao;
+package edu.hit.bailexi.dao;
 
-import edu.hit.chaijiarui.domain.User;
+import edu.hit.bailexi.domain.User;
 
 public interface UserDao {
 

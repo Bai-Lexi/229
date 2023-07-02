@@ -1,10 +1,11 @@
-package edu.hit.chaijiarui.service.impl;
+package edu.hit.bailexi.service.impl;
 
-import edu.hit.chaijiarui.domain.Category;
-import edu.hit.chaijiarui.dao.CategoryDao;
-import edu.hit.chaijiarui.dao.impl.CategoryDaoImpl;
-import edu.hit.chaijiarui.service.CategoryService;
+import edu.hit.bailexi.domain.Category;
+import edu.hit.bailexi.dao.CategoryDao;
+import edu.hit.bailexi.dao.impl.CategoryDaoImpl;
+import edu.hit.bailexi.service.CategoryService;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class CategoryServiceImpl implements CategoryService {
@@ -12,5 +13,9 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao = new CategoryDaoImpl();
 
     @Override
-    public List<Category> findAll() { return categoryDao.findAll();}
+    public List<Category> findAll() {
+        List<Category> cs = categoryDao.findAll();
+        cs.sort(Comparator.comparingInt(Category::getCid));
+        return cs;
+    }
 }

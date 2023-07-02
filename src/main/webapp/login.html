@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <meta charset="utf-8">
@@ -14,8 +14,6 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--导入angularJS文件-->
-    <script src="js/angular.min.js"></script>
     <!--导入jquery-->
     <script src="js/jquery-3.3.1.js"></script>
 
@@ -27,13 +25,14 @@
 <div id="header"></div>
 <!-- 头部 end -->
 <section id="login_wrap">
-    <div class="fullscreen-bg" style="background: url(images/login_bg.png);height: 532px;">
+    <div class="fullscreen-bg" style="background: url(https://ts1.cn.mm.bing.net/th/id/R-C.d8f53bebe769a8699543bd55405a096e?rik=oYTj93B2nZvp6Q&riu=http%3a%2f%2fwww.wumeihuojia.com%2fuploadfile%2fimage%2f20200618%2f1592467645881506.jpg&ehk=UvZQA9lF14hPaymE41URlYmYjf80buaXyvXlS8QxNLk%3d&risl=&pid=ImgRaw&r=0
+);height: 532px;">
 
     </div>
     <div class="login-box">
         <div class="title">
-            <img src="images/login_logo.png" alt="">
-            <span>欢迎登录黑马旅游账户</span>
+            <img src="images/login_logo.png" alt="" width="60" height="60">
+            <span>COME ON WITH US</span>
         </div>
         <div class="login_inner">
 
@@ -41,16 +40,22 @@
             <div id="errorMsg" class="alert alert-danger"></div>
             <form id="loginForm" action="" method="post" accept-charset="utf-8">
                 <input type="hidden" name="action" value="login"/>
-                <input name="username" type="text" placeholder="请输入账号" autocomplete="off">
-                <input name="password" type="text" placeholder="请输入密码" autocomplete="off">
+                <label>
+                    <input name="username" type="text" class="text" placeholder="请输入账号" autocomplete="off">
+                </label>
+                <label>
+                    <input name="password" type="text" class="text" placeholder="请输入密码" autocomplete="off">
+                </label>
                 <div class="verify">
 
                 </div>
                 <div class="submit_btn">
-                    <button type="button" id="btn_sub">登录</button>
+                    <button type="button" id="btn_sub">Login</button>
                     <div class="auto_login">
-                        <input type="checkbox" name="" class="checkbox">
-                        <span>自动登录</span>
+                        <label>
+                            <input type="checkbox" name="" class="checkbox">
+                        </label>
+                        <span>AUTO?</span>
                     </div>
                 </div>
             </form>

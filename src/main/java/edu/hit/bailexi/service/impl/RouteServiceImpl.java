@@ -1,18 +1,25 @@
-package edu.hit.chaijiarui.service.impl;
+package edu.hit.bailexi.service.impl;
 
-import edu.hit.chaijiarui.dao.RouteDao;
-import edu.hit.chaijiarui.dao.impl.RouteDaoImpl;
-import edu.hit.chaijiarui.domain.PageBean;
-import edu.hit.chaijiarui.domain.Route;
-import edu.hit.chaijiarui.service.RouteService;
+import edu.hit.bailexi.dao.RouteDao;
+import edu.hit.bailexi.dao.RouteImgDao;
+import edu.hit.bailexi.dao.SellerDao;
+import edu.hit.bailexi.dao.impl.RouteDaoImpl;
+import edu.hit.bailexi.dao.impl.RouteImgDaoImpl;
+import edu.hit.bailexi.dao.impl.SellerDaoImpl;
+import edu.hit.bailexi.domain.PageBean;
+import edu.hit.bailexi.domain.Route;
+import edu.hit.bailexi.domain.RouteImg;
+import edu.hit.bailexi.domain.Seller;
+import edu.hit.bailexi.service.RouteService;
 
 import java.util.List;
 
 public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = (RouteDao) new RouteDaoImpl();
-
+    private RouteImgDao routeImgDao = new RouteImgDaoImpl();
+    private SellerDao sellerDao = new SellerDaoImpl();
     @Override
-    public PageBean<Route> PageQuery(int cid, int currentPage, int pageSize) {
+    public PageBean<Route> PageQuery(int cid, int currentPage, int pageSize, String rname) {
         //封装PageBean
         PageBean<Route> pb = new PageBean<Route>();
         //设置当前页码
@@ -21,12 +28,12 @@ public class RouteServiceImpl implements RouteService {
         pb.setPageSize(pageSize);
 
         //设置总记录数
-        int totalCount = routeDao.findTotalCount(cid);
+        int totalCount = routeDao.findTotalCount(cid,rname);
         pb.setTotalCount(totalCount);
 
         //设置当前页显示的数据集合
         int start = (currentPage - 1) * pageSize;//开始的记录数
-        List<Route> list = routeDao.findByPage(cid,start,pageSize);
+        List<Route> list = routeDao.findByPage(cid,start,pageSize,rname);
         pb.setList(list);
 
         //设置总页数 = 总记录数/每页的显示条数
@@ -35,6 +42,20 @@ public class RouteServiceImpl implements RouteService {
 
 
         return pb;
+    }
+
+    @Override
+    public Route findOne(String rid) {
+        //1.根据id去route中查询route对象
+        Route route = routeDao.findOne(Integer.parseInt(rid));
+        //2.根据route的id查询图片集合信息
+        List<RouteImg>routeImgList = routeImgDao.findByRid(Integer.parseInt(rid));
+        //2.2将集合设置到route对象
+        route.setRouteImgList(routeImgList);
+        //3.根据route的sid(商家)查询卖家的信息
+        Seller seller = sellerDao.findById(route.getSid());
+        route.setSeller(seller);
+        return route;
     }
 
 }

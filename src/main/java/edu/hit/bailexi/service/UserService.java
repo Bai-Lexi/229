@@ -1,5 +1,5 @@
-package edu.hit.chaijiarui.service;
-import edu.hit.chaijiarui.domain.User;
+package edu.hit.bailexi.service;
+import edu.hit.bailexi.domain.User;
 
 public interface UserService {
     /**
