@@ -17,8 +17,8 @@
             <div class="bread_box">
                 <a href="/">首页</a>
                 <span> &gt;</span>
-                <a href="#">电子产品</a><span> &gt;</span>
-                <a href="#">华为/HUAWEI P60 超聚光XMAGE影像 双向北斗卫星消息 256GB 洛可可白 鸿蒙曲面屏 智能旗舰手机</a>
+                <a href="#" id="classification">电子产品</a><span> &gt;</span>
+                <a href="#" id="introduce">华为/HUAWEI P60 超聚光XMAGE影像 双向北斗卫星消息 256GB 洛可可白 鸿蒙曲面屏 智能旗舰手机</a>
             </div>
             <div class="prosum_box">
                 <dl class="prosum_left">
@@ -221,6 +221,8 @@
                 $.get("route/findOne", {rid: rid}, function (route) {
                     // alert(route.rname);
                     // 3. 解析数据，填充html
+                    $("#classification").html(route.category.cname);
+                    $("#introduce").html(route.rname)
                     $("#rname").html(route.rname);
                     $("#routeIntroduce").html(route.routeIntroduce);
                     $("#price").html("¥" + route.price);
