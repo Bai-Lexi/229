@@ -220,54 +220,54 @@
     }
 
 
-    // $(function () {
-    //     // 发送请求，判断用户是否收藏过该线路
-    //     let rid = getParameter("rid");
-    //     $.get("route/isFavorite", {rid: rid}, function (flag) {
-    //         if (flag) {
-    //             // 用户已经收藏过
-    //             //<a  class="btn already" disabled="disabled">
-    //             //设置收藏按钮的样式
-    //             $("#favorite").addClass("already");
-    //             $("#favorite").attr("disabled", "disabled");
-    //             //删除按钮的点击事件
-    //             $("#favorite").removeAttr("onclick");
-    //
-    //             //设置取消收藏按钮的样式
-    //             $("#unfavorite").removeClass("already");
-    //             $("#unfavorite").removeAttr("disabled");
-    //             //新增按钮的点击事件
-    //             $("#unfavorite").attr("onclick");
-    //
-    //         } else {
-    //             // 用户没有收藏
-    //             // 设置收藏按钮样式
-    //             $("#favorite").removeClass("already");
-    //             $("#favorite").removeAttr("disabled");
-    //             //新增按钮的点击事件
-    //             $("#favorite").attr("onclick");
-    //             // 设置取消收藏样式
-    //             $("#unfavorite").addClass("already");
-    //             $("#unfavorite").attr("disabled", "disabled");
-    //             //删除掉取消按钮的点击事件
-    //             $("#unfavorite").removeAttr("onclick");
-    //         }
-    //     });
-    // });
+    $(function () {
+        // 发送请求，判断用户是否收藏过该线路
+        let rid = getParameter("rid");
+        $.get("route/isFavourite", {rid: rid}, function (flag) {
+            if (flag) {
+                // 用户已经收藏过
+                //<a  class="btn already" disabled="disabled">
+                //设置收藏按钮的样式
+                $("#favorite").addClass("already");
+                $("#favorite").attr("disabled", "disabled");
+                //删除按钮的点击事件
+                $("#favorite").removeAttr("onclick");
+
+                //设置取消收藏按钮的样式
+                $("#unfavorite").removeClass("already");
+                $("#unfavorite").removeAttr("disabled");
+                //新增按钮的点击事件
+                $("#unfavorite").attr("onclick");
+
+            } else {
+                // 用户没有收藏
+                // 设置收藏按钮样式
+                $("#favorite").removeClass("already");
+                $("#favorite").removeAttr("disabled");
+                //新增按钮的点击事件
+                $("#favorite").attr("onclick");
+                // 设置取消收藏样式
+                $("#unfavorite").addClass("already");
+                $("#unfavorite").attr("disabled", "disabled");
+                //删除掉取消按钮的点击事件
+                $("#unfavorite").removeAttr("onclick");
+            }
+        });
+    });
 
     //点击收藏按钮触发的方法
     function addFavorite() {
         let rid = getParameter("rid");
         //1. 判断用户是否登录
-        $.get("registUserServlet", {}, function (user) {
+        $.get("user/findOne", {}, function (user) {
             if (user) {
                 //用户登录了
                 //添加功能
-                $.get("route/addFavorite", {rid: rid}, function () {
+                $.get("route/addFavourite", {rid: rid}, function () {
 
                 });
 
-                $.get("route/isFavorite", {rid: rid}, function (flag) {
+                $.get("route/isFavourite", {rid: rid}, function (flag) {
                     if (flag) {
                         //设置收藏按钮的样式
                         $("#favorite").addClass("already");
@@ -314,15 +314,15 @@
     function removeFavorite() {
         let rid = getParameter("rid");
         //1. 判断用户是否登录
-        $.get("registUserServlet", {}, function (user) {
+        $.get("user/findOne", {}, function (user) {
             if (user) {
                 //用户登录了
                 //添加功能
-                $.get("route/removeFavorite", {rid: rid}, function () {
+                $.get("route/removeFavourite", {rid: rid}, function () {
 
                 });
 
-                $.get("route/isFavorite", {rid: rid}, function (flag) {
+                $.get("route/isFavourite", {rid: rid}, function (flag) {
                     // 用户已收藏
                     if (flag) {
                         //设置收藏按钮的样式

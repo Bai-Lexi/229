@@ -67,4 +67,11 @@ public class RouteDaoImpl implements RouteDao {
         String sql = "select * from tab_route where rid = ?";
         return template.queryForObject(sql, new BeanPropertyRowMapper<>(Route.class),rid);
     }
+
+    @Override
+    public void updateFavoriteCount(String rid,Integer count) {
+        String sql = "update tab_route set count= ? where rid=? ";
+
+        template.update(sql,count,rid);
+    }
 }
