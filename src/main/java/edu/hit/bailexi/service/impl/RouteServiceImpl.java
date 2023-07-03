@@ -1,15 +1,14 @@
 package edu.hit.bailexi.service.impl;
 
+import edu.hit.bailexi.dao.CategoryDao;
 import edu.hit.bailexi.dao.RouteDao;
 import edu.hit.bailexi.dao.RouteImgDao;
 import edu.hit.bailexi.dao.SellerDao;
+import edu.hit.bailexi.dao.impl.CategoryDaoImpl;
 import edu.hit.bailexi.dao.impl.RouteDaoImpl;
 import edu.hit.bailexi.dao.impl.RouteImgDaoImpl;
 import edu.hit.bailexi.dao.impl.SellerDaoImpl;
-import edu.hit.bailexi.domain.PageBean;
-import edu.hit.bailexi.domain.Route;
-import edu.hit.bailexi.domain.RouteImg;
-import edu.hit.bailexi.domain.Seller;
+import edu.hit.bailexi.domain.*;
 import edu.hit.bailexi.service.RouteService;
 
 import java.util.List;
@@ -18,6 +17,7 @@ public class RouteServiceImpl implements RouteService {
     private RouteDao routeDao = (RouteDao) new RouteDaoImpl();
     private RouteImgDao routeImgDao = new RouteImgDaoImpl();
     private SellerDao sellerDao = new SellerDaoImpl();
+    private CategoryDao categoryDao = new CategoryDaoImpl();
     @Override
     public PageBean<Route> PageQuery(int cid, int currentPage, int pageSize, String rname) {
         //封装PageBean
@@ -55,6 +55,9 @@ public class RouteServiceImpl implements RouteService {
         //3.根据route的sid(商家)查询卖家的信息
         Seller seller = sellerDao.findById(route.getSid());
         route.setSeller(seller);
+        //4.根据route的cid查找分类
+        Category category = categoryDao.findByCid(route.getCid());
+        route.setCategory(category);
         return route;
     }
 
