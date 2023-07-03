@@ -120,4 +120,22 @@ public class RouteServlet extends BaseServlet {
         //4.写入客户端
         writeValue(flag, response);
     }
+
+    public void removeFavourite (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
+        //1.获取rid
+        String rid = request.getParameter("rid");
+        //2.获取当前登录的用户
+        User user = (User) request.getSession().getAttribute("user");
+        int uid;//当前登录用户的uid;
+        //判断用户是否登录
+        if (user == null) {
+            //没有登录
+            return;
+        } else {
+            //用户已登录
+            uid = user.getUid();
+        }
+
+        favoriteService.removeFavourite(rid, uid);
+    }
 }

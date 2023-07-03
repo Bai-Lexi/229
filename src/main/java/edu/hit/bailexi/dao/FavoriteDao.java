@@ -9,4 +9,6 @@ public interface FavoriteDao {
     Favorite findFavouriteByRidAndUid(String rid, int uid);
 
     int findFavoriteCount(String rid);
+
+    void removeFavourite(String rid, int uid);
 }

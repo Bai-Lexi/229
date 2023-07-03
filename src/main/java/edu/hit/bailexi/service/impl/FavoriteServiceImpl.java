@@ -30,4 +30,11 @@ public class FavoriteServiceImpl implements FavoriteService {
         }
         return flag;
     }
+
+    @Override
+    public void removeFavourite(String rid, int uid) {
+        favoriteDao.removeFavourite(rid, uid);
+        int count = favoriteDao.findFavoriteCount(rid);
+        routeDao.updateFavoriteCount(rid,count);
+    }
 }
