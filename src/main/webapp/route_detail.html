@@ -1,409 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>路线详情</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/common.css">
-        <link rel="stylesheet" type="text/css" href="css/route-detail.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>路线详情</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/route-detail.css">
+</head>
 
-    <body>
-        <!--引入头部-->
-        <div id="header"></div>
-        <!-- 详情 start -->
-        <div class="wrap">
-            <div class="bread_box">
-                <a href="/">首页</a>
-                <span> &gt;</span>
-                <a href="#">电子产品</a><span> &gt;</span>
-                <a href="#">华为/HUAWEI P60 超聚光XMAGE影像 双向北斗卫星消息 256GB 洛可可白 鸿蒙曲面屏 智能旗舰手机</a>
+<body>
+<!--引入头部-->
+<div id="header"></div>
+<!-- 详情 start -->
+<div class="wrap">
+    <div class="bread_box">
+        <a href="/">首页</a>
+        <span> &gt;</span>
+        <a href="#">电子产品</a><span> &gt;</span>
+        <a href="#">华为/HUAWEI P60 超聚光XMAGE影像 双向北斗卫星消息 256GB 洛可可白 鸿蒙曲面屏 智能旗舰手机</a>
+    </div>
+    <div class="prosum_box">
+        <dl class="prosum_left">
+            <dt id="dt">
+
+            </dt>
+            <dd id="dd">
+
+            </dd>
+        </dl>
+        <div class="prosum_right">
+            <p class="pros_title" id="rname"></p>
+            <p class="hot" id="routeIntroduce"></p>
+            <div class="pros_other">
+                <p>经营商家 ：<span id="sname"></span></p>
+                <p>咨询电话 :<span id="consphone"></span></p>
+                <p>商品产地 ： <span id="address"></span></p>
             </div>
-            <div class="prosum_box">
-                <dl class="prosum_left">
-                    <dt id="dt">
-                        <img alt="" class="big_img"
-                             src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/113368/35/38694/71446/6492b60bF63ec09e6/7408f9e451ace7ef.jpg">
-                    </dt>
-                    <dd id="dd">
-                        <a class="up_img up_img_disable"></a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/222526/25/25032/26296/646b7e5eF9d267924/14ae77bbd9791d0f.jpg">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/222526/25/25032/26296/646b7e5eF9d267924/14ae77bbd9791d0f.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img cur_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/192424/14/34936/113256/6436568dF739c65b0/d1619c0a5abed3b6.jpg">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/192424/14/34936/113256/6436568dF739c65b0/d1619c0a5abed3b6.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/72394/39/24097/33798/64365624F50efde7b/951057fbe208a178.jpg">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/72394/39/24097/33798/64365624F50efde7b/951057fbe208a178.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/202353/19/23287/30411/641c10adF6f6e5273/755a1b20de1eda2c.jpg">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/202353/19/23287/30411/641c10adF6f6e5273/755a1b20de1eda2c.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/169283/19/36193/208244/641c10b2F2dcf0708/c5bd2094cce108d7.jpg"
-                           style="display:none;">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/169283/19/36193/208244/641c10b2F2dcf0708/c5bd2094cce108d7.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/173815/1/35827/132254/641c10b7F7b1eaf7f/50b430b6c67faac0.jpg"
-                           style="display:none;">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/173815/1/35827/132254/641c10b7F7b1eaf7f/50b430b6c67faac0.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://img13.360buyimg.com/n1/s450x450_jfs/t1/176693/40/34553/21838/641c10c1Fce3f5d8e/2ee9a654f00ef84e.jpg"
-                           style="display:none;">
-                            <img src="https://img13.360buyimg.com/n1/s450x450_jfs/t1/176693/40/34553/21838/641c10c1Fce3f5d8e/2ee9a654f00ef84e.jpg" alt="">
-                        </a>
-                        <a title="" class="little_img"
-                           data-bigpic="https://www.jinmalvyou.com/Public/uploads/goods_img/img_size4/201703/m487bbbc6e43eba6aa6a36cc1a182f7a20.jpg"
-                           style="display:none;">
-                            <img src="https://www.jinmalvyou.com/Public/uploads/goods_img/img_size2/201703/m287bbbc6e43eba6aa6a36cc1a182f7a20.jpg" alt="">
-                        </a>
-                        <a class="down_img down_img_disable" style="margin-bottom: 0;"></a>
-                    </dd>
-                </dl>
-                <div class="prosum_right">
-                    <p class="pros_title" id="rname">华为/HUAWEI P60 超聚光XMAGE影像 双向北斗卫星消息 256GB 洛可可白 鸿蒙曲面屏 智能旗舰手机</p>
-                    <p class="hot" id="routeIntroduce">【华为P60新品上市】超聚光XMAGE影像,双向北斗卫星消息,升级大电池更多手机热销爆款，限量抢购</p>
-                    <div class="pros_other">
-                        <p>经营商家 ：<span id="sname">华为官方旗舰店</span></p>
-                        <p>咨询电话 :<span id="consphone"> 999-999-999</span></p>
-                        <p>商品产地 ： <span id="address">中国大陆</span></p>
-                    </div>
-                    <div class="pros_price">
-                        <p class="price"><strong id="price">¥4988.00</strong><span>起</span></p>
-                        <p class="collect">
-                            <a class="btn" id="buynow" href="buynow.html">立即购买</a>
-                            <a class="btn" id="favorite" onclick="addFavorite()"><i
-                                    class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
-                            <a class="btn" id="unfavorite" onclick="removeFavorite()"><i
-                                    class="glyphicon glyphicon-heart-empty"></i>取消收藏</a>
-                            <!--<a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
-                            <span id="favoriteCount">已收藏999次</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="you_need_konw">
-                <span>商品介绍</span>
-                <div class="notice">
-                    <ul class="parameter2 p-parameter-list">
-                        <li title="华为P60">商品名称：华为P60</li>
-                        <li class="shieldShopInfo" title="100054651293">商品编号：100054651293</li>
-                        <li title="0.53kg">商品毛重：0.53kg</li>
-                        <li title="中国大陆">商品产地：中国大陆</li>
-                        <li title="骁龙8系列 4G">CPU型号：骁龙8系列 4G</li>
-                        <li title="8GB">运行内存：8GB</li>
-                        <li title="洛可可白">机身颜色：洛可可白</li>
-                        <li title="IP68">三防标准：IP68</li>
-                        <li title="FHD+">屏幕分辨率：FHD+</li>
-                        <li title="50-79W">充电功率：50-79W</li>
-                        <li title="256GB">机身内存：256GB</li>
-                        <li title="混合色系">机身色系：混合色系</li>
-                        <li title="OLED曲面屏">屏幕材质：OLED曲面屏</li>
-                        <li title="4800万像素">后摄主像素：4800万像素</li>
-                        <li title="商务，炫彩，大气">风格：商务，炫彩，大气</li>
-                    </ul>
-                </div>
+            <div class="pros_price">
+                <p class="price"><strong id="price"></strong><span>起</span></p>
+                <p class="collect">
+                    <a class="btn" id="buynow" href="buynow.html">立即购买</a>
+                    <a class="btn" id="favorite" onclick="addFavorite()"><i
+                            class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+                    <a class="btn" id="unfavorite" onclick="removeFavorite()"><i
+                            class="glyphicon glyphicon-heart-empty"></i>取消收藏</a>
+                    <!--<a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
+                    <span id="favoriteCount"></span>
+                </p>
             </div>
         </div>
-        <!-- 详情 end -->
+    </div>
+    <div class="you_need_konw">
+        <span>商品介绍</span>
+        <div class="notice">
+            <ul class="parameter2 p-parameter-list">
+                <li title="华为P60">商品名称：华为P60</li>
+                <li class="shieldShopInfo" title="100054651293">商品编号：100054651293</li>
+                <li title="0.53kg">商品毛重：0.53kg</li>
+                <li title="中国大陆">商品产地：中国大陆</li>
+                <li title="骁龙8系列 4G">CPU型号：骁龙8系列 4G</li>
+                <li title="8GB">运行内存：8GB</li>
+                <li title="洛可可白">机身颜色：洛可可白</li>
+                <li title="IP68">三防标准：IP68</li>
+                <li title="FHD+">屏幕分辨率：FHD+</li>
+                <li title="50-79W">充电功率：50-79W</li>
+                <li title="256GB">机身内存：256GB</li>
+                <li title="混合色系">机身色系：混合色系</li>
+                <li title="OLED曲面屏">屏幕材质：OLED曲面屏</li>
+                <li title="4800万像素">后摄主像素：4800万像素</li>
+                <li title="商务，炫彩，大气">风格：商务，炫彩，大气</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 详情 end -->
 
-        <!--引入尾部-->
-        <div id="footer"></div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-3.3.1.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <!--导入布局js，共享header和footer-->
-        <script type="text/javascript" src="js/include.js"></script>
-        <script src="js/getParameter.js"></script>
-        <script>
-            $(document).ready(function () {
+<!--引入尾部-->
+<div id="footer"></div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+<script src="js/getParameter.js"></script>
+<script>
 
-                goImg();
-                //自动播放
-                let timer = setInterval("auto_play()", 5000);
-                $("#dd").hover(function (){
-                    clearInterval(timer)
-                }, function (){
-                    timer = setInterval("auto_play()", 5000);
-                })
-            });
+    let picindex = 0;
+    let nextindex = 4;
+    let num = 0;
 
-            let lit_sel = $('.little_img');
-            let lit_eq0_sel = $('.little_img:eq(0)');
-            let favor_sel = $("#favorite");
-            let unfavor_sel = $("#unfavorite");
+    $(function () {
+        //1. 获取rid
+        let rid = getParameter("rid");
+        //2. 发送ajax请求 route/findone
+        $.get("route/findOne", {rid: rid}, function (route) {
+            // alert(route.rname);
+            // 3. 解析数据，填充html
+            $("#rname").html(route.rname);
+            $("#routeIntroduce").html(route.routeIntroduce);
+            $("#price").html("¥" + route.price);
+            $("#sname").html(route.seller.sname);
+            $("#consphone").html(route.seller.consphone);
+            $("#address").html(route.seller.address);
+            // 设置收藏次数
+            $("#favoriteCount").html("已收藏" + route.count + "次");
 
-            let picindex = 0;
-            let nextindex = 4;
-            let num = lit_sel.length;
+            //3. 图片展示
+            //3.1大图片展示
+            let big_picture = '<img alt=""  class="big_img"\n' + 'src="' + route.routeImgList[0].bigPic + '">';
+            $("#dt").html(big_picture);
 
-            function nextSmallPic() {
-                if ((nextindex + 1) <= num) {
-                    $('.little_img:eq(' + picindex + ')').hide();
-                    $('.little_img:eq(' + nextindex + ')').show();
-                    picindex = picindex + 1;
-                    nextindex = nextindex + 1;
-                }
-            }
-
-            function previousSmallPic() {
-                if (picindex > 0) {
-                    $('.little_img:eq(' + (nextindex - 1) + ')').hide();
-                    $('.little_img:eq(' + (picindex - 1) + ')').show();
-                    picindex = picindex - 1;
-                    nextindex = nextindex - 1;
-                }
-            }
-
-            function goImg() {
-                //焦点图效果
-                //点击图片切换图片
-                lit_sel.on('mousemove', function () {
-                    lit_sel.removeClass('cur_img');
-                    let big_pic = $(this).data('bigpic');
-                    $('.big_img').attr('src', big_pic);
-                    $(this).addClass('cur_img');
-                });
-                //上下切换
-
-                $('.down_img').on('click', function () {
-                    nextSmallPic()
-                });
-                $('.up_img').on('click', function () {
-                    previousSmallPic()
-                });
-            }
-
-            //自动轮播方法
-            // 留有一个bug，目前只显示4张图片轮训，需要完成：超过4张，大图片显示时，右侧小图片自动跟上来
-            function auto_play() {
-                let big_pic;
-                let cur_index = $('.prosum_left dd').find('a.cur_img').index();
-                cur_index = cur_index - 1;
-                if (cur_index < (num - 1)) {
-                    const next_index = cur_index + 1;
-                    let lit_eqn_sel = $('.little_img:eq(' + next_index + ')')
-                    big_pic = lit_eqn_sel.data('bigpic');
-                    lit_sel.removeClass('cur_img');
-                    lit_eqn_sel.addClass('cur_img');
-                    $('.big_img').attr('src', big_pic);
-                    nextSmallPic()
+            //3.2小图片展示
+            //3.2.1 小图片向上箭头
+            let ddstr = '<a class="up_img up_img_disable"></a>';
+            //3.2.2 遍历routeImgList
+            for (let i = 0; i < route.routeImgList.length; i++) {
+                let astr;
+                // 多个小图片
+                if (i >= 4) {
+                    astr = '<a title="" class="little_img" data-bigpic="' + route.routeImgList[i].bigPic + '" style="display:none;">\n' +
+                        '                        <img src="' + route.routeImgList[i].smallPic + '" alt="">\n' +
+                        '                    </a>';
                 } else {
-                    picindex = 0;
-                    nextindex = 4;
-                    if (num > 3) {
-                        for (let i=0; i<4; i++) {
-                            $('.little_img:eq(' + (i) + ')').show();
-                        }
-                        for (let j=4; j<num; j++) {
-                            $('.little_img:eq(' + (j) + ')').hide();
-                        }
-                    }
-                    big_pic = lit_eq0_sel.data('bigpic');
-                    lit_sel.removeClass('cur_img');
-                    lit_eq0_sel.addClass('cur_img');
-                    $('.big_img').attr('src', big_pic);
+                    astr = '<a title="" class="little_img" data-bigpic="' + route.routeImgList[i].bigPic + '">\n' +
+                        '                        <img src="' + route.routeImgList[i].smallPic + '" alt="">\n' +
+                        '                    </a>';
+                }
+                ddstr += astr;
+            }
+            ddstr += '<a class="down_img down_img_disable" style="margin-bottom: 0;"></a>';
+            $("#dd").html(ddstr);
+            //4. 图片展示和切换代码调用
+            num = $('.little_img').length
+            goImg();
+        });
+    });
+
+    $(document).ready(function () {
+        //自动播放
+        let timer = setInterval("auto_play()", 5000);
+        $("#dd").hover(function () {
+            clearInterval(timer)
+        }, function () {
+            timer = setInterval("auto_play()", 5000);
+        })
+    });
+
+    function nextSmallPic() {
+        if ((nextindex + 1) <= num) {
+            $('.little_img:eq(' + picindex + ')').hide();
+            $('.little_img:eq(' + nextindex + ')').show();
+            picindex = picindex + 1;
+            nextindex = nextindex + 1;
+        }
+    }
+
+    function previousSmallPic() {
+        if (picindex > 0) {
+            $('.little_img:eq(' + (nextindex - 1) + ')').hide();
+            $('.little_img:eq(' + (picindex - 1) + ')').show();
+            picindex = picindex - 1;
+            nextindex = nextindex - 1;
+        }
+    }
+
+    function goImg() {
+        //焦点图效果
+        //点击图片切换图片
+        $('.little_img').on('mousemove', function () {
+            $('.little_img').removeClass('cur_img');
+            let big_pic = $(this).data('bigpic');
+            $('.big_img').attr('src', big_pic);
+            $(this).addClass('cur_img');
+        });
+        //上下切换
+
+        $('.down_img').on('click', function () {
+            nextSmallPic()
+        });
+        $('.up_img').on('click', function () {
+            previousSmallPic()
+        });
+    }
+
+    //自动轮播方法
+    // 留有一个bug，目前只显示4张图片轮训，需要完成：超过4张，大图片显示时，右侧小图片自动跟上来
+    function auto_play() {
+        let big_pic;
+        let cur_index = $('.prosum_left dd').find('a.cur_img').index();
+        cur_index = cur_index - 1;
+        if (cur_index < (num - 1)) {
+            const next_index = cur_index + 1;
+            let lit_eqn_sel = $('.little_img:eq(' + next_index + ')')
+            big_pic = lit_eqn_sel.data('bigpic');
+            $('.little_img').removeClass('cur_img');
+            lit_eqn_sel.addClass('cur_img');
+            $('.big_img').attr('src', big_pic);
+            nextSmallPic()
+        } else {
+            picindex = 0;
+            nextindex = 4;
+            if (num > 3) {
+                for (let i = 0; i < 4; i++) {
+                    $('.little_img:eq(' + (i) + ')').show();
+                }
+                for (let j = 4; j < num; j++) {
+                    $('.little_img:eq(' + (j) + ')').hide();
                 }
             }
+            big_pic = $('.little_img:eq(0)').data('bigpic');
+            $('.little_img').removeClass('cur_img');
+            $('.little_img:eq(0)').addClass('cur_img');
+            $('.big_img').attr('src', big_pic);
+        }
+    }
 
-            $(function () {
-                //1. 获取rid
-                let rid = getParameter("rid");
-                //2. 发送ajax请求 route/findone
-                $.get("route/findOne", {rid: rid}, function (route) {
-                    // alert(route.rname);
-                    // 3. 解析数据，填充html
-                    $("#rname").html(route.rname);
-                    $("#routeIntroduce").html(route.routeIntroduce);
-                    $("#price").html("¥" + route.price);
-                    $("#sname").html(route.seller.sname);
-                    $("#consphone").html(route.seller.consphone);
-                    $("#address").html(route.seller.address);
-                    // 设置收藏次数
-                    $("#favoriteCount").html("已收藏" + route.count + "次");
 
-                    //3. 图片展示
-                    //3.1大图片展示
-                    let big_picture = '<img alt=""  class="big_img"\n' + 'src="' + route.routeImgList[0].bigPic + '">';
-                    $("#dt").html(big_picture);
+    // $(function () {
+    //     // 发送请求，判断用户是否收藏过该线路
+    //     let rid = getParameter("rid");
+    //     $.get("route/isFavorite", {rid: rid}, function (flag) {
+    //         if (flag) {
+    //             // 用户已经收藏过
+    //             //<a  class="btn already" disabled="disabled">
+    //             //设置收藏按钮的样式
+    //             $("#favorite").addClass("already");
+    //             $("#favorite").attr("disabled", "disabled");
+    //             //删除按钮的点击事件
+    //             $("#favorite").removeAttr("onclick");
+    //
+    //             //设置取消收藏按钮的样式
+    //             $("#unfavorite").removeClass("already");
+    //             $("#unfavorite").removeAttr("disabled");
+    //             //新增按钮的点击事件
+    //             $("#unfavorite").attr("onclick");
+    //
+    //         } else {
+    //             // 用户没有收藏
+    //             // 设置收藏按钮样式
+    //             $("#favorite").removeClass("already");
+    //             $("#favorite").removeAttr("disabled");
+    //             //新增按钮的点击事件
+    //             $("#favorite").attr("onclick");
+    //             // 设置取消收藏样式
+    //             $("#unfavorite").addClass("already");
+    //             $("#unfavorite").attr("disabled", "disabled");
+    //             //删除掉取消按钮的点击事件
+    //             $("#unfavorite").removeAttr("onclick");
+    //         }
+    //     });
+    // });
 
-                    //3.2小图片展示
-                    //3.2.1 小图片向上箭头
-                    let ddstr = '<a class="up_img up_img_disable"></a>';
-                    //3.2.2 遍历routeImgList
-                    for (let i = 0; i < route.routeImgList.length; i++) {
-                        let astr;
-                        // 多个小图片
-                        if (i >= 4) {
-                            astr = '<a title="" class="little_img" data-bigpic="' + route.routeImgList[i].bigPic + '" style="display:none;">\n' +
-                                '                        <img src="' + route.routeImgList[i].smallPic + '" alt="">\n' +
-                                '                    </a>';
-                        } else {
-                            astr = '<a title="" class="little_img" data-bigpic="' + route.routeImgList[i].bigPic + '">\n' +
-                                '                        <img src="' + route.routeImgList[i].smallPic + '" alt="">\n' +
-                                '                    </a>';
-                        }
-                        ddstr += astr;
-                    }
-                    ddstr += '<a class="down_img down_img_disable" style="margin-bottom: 0;"></a>';
-                    $("#dd").html(ddstr);
-                    //4. 图片展示和切换代码调用
-                    goImg();
+    //点击收藏按钮触发的方法
+    function addFavorite() {
+        let rid = getParameter("rid");
+        //1. 判断用户是否登录
+        $.get("registUserServlet", {}, function (user) {
+            if (user) {
+                //用户登录了
+                //添加功能
+                $.get("route/addFavorite", {rid: rid}, function () {
+
                 });
-            });
 
-            $(function () {
-                // 发送请求，判断用户是否收藏过该线路
-                let rid = getParameter("rid");
                 $.get("route/isFavorite", {rid: rid}, function (flag) {
                     if (flag) {
-                        // 用户已经收藏过
-                        //<a  class="btn already" disabled="disabled">
                         //设置收藏按钮的样式
-                        favor_sel.addClass("already");
-                        favor_sel.attr("disabled", "disabled");
+                        $("#favorite").addClass("already");
+                        $("#favorite").attr("disabled", "disabled");
                         //删除按钮的点击事件
-                        favor_sel.removeAttr("onclick");
+                        $("#favorite").removeAttr("onclick");
 
                         //设置取消收藏按钮的样式
-                        unfavor_sel.removeClass("already");
-                        unfavor_sel.removeAttr("disabled");
+                        $("#unfavorite").removeClass("already");
+                        $("#unfavorite").removeAttr("disabled");
                         //新增按钮的点击事件
-                        unfavor_sel.attr("onclick");
-
+                        $("#unfavorite").attr("onclick");
                     } else {
+                        // 用户未收藏
                         // 用户没有收藏
                         // 设置收藏按钮样式
-                        favor_sel.removeClass("already");
-                        favor_sel.removeAttr("disabled");
+                        $("#favorite").removeClass("already");
+                        $("#favorite").removeAttr("disabled");
                         //新增按钮的点击事件
-                        favor_sel.attr("onclick");
+                        $("#favorite").attr("onclick");
                         // 设置取消收藏样式
-                        unfavor_sel.addClass("already");
-                        unfavor_sel.attr("disabled", "disabled");
+                        $("#unfavorite").addClass("already");
+                        $("#unfavorite").attr("disabled", "disabled");
                         //删除掉取消按钮的点击事件
-                        unfavor_sel.removeAttr("onclick");
+                        $("#unfavorite").removeAttr("onclick");
                     }
                 });
-            });
 
-            //点击收藏按钮触发的方法
-            function addFavorite() {
-                let rid = getParameter("rid");
-                //1. 判断用户是否登录
-                $.get("registUserServlet", {}, function (user) {
-                    if (user) {
-                        //用户登录了
-                        //添加功能
-                        $.get("route/addFavorite", {rid: rid}, function () {
-
-                        });
-
-                        $.get("route/isFavorite", {rid: rid}, function (flag) {
-                            if (flag) {
-                                //设置收藏按钮的样式
-                                favor_sel.addClass("already");
-                                favor_sel.attr("disabled", "disabled");
-                                //删除按钮的点击事件
-                                favor_sel.removeAttr("onclick");
-
-                                //设置取消收藏按钮的样式
-                                unfavor_sel.removeClass("already");
-                                unfavor_sel.removeAttr("disabled");
-                                //新增按钮的点击事件
-                                unfavor_sel.attr("onclick");
-                            } else {
-                                // 用户未收藏
-                                // 用户没有收藏
-                                // 设置收藏按钮样式
-                                favor_sel.removeClass("already");
-                                favor_sel.removeAttr("disabled");
-                                //新增按钮的点击事件
-                                favor_sel.attr("onclick");
-                                // 设置取消收藏样式
-                                unfavor_sel.addClass("already");
-                                unfavor_sel.attr("disabled", "disabled");
-                                //删除掉取消按钮的点击事件
-                                unfavor_sel.removeAttr("onclick");
-                            }
-                        });
-
-                        $.get("route/findOne", {rid: rid}, function (route) {
-                            $("#favoriteCount").html("已收藏" + route.count + "次");  // 设置收藏次数
-                        });
-
-                        // AJAX只能保证一次请求是有效的，不刷一下的话无法保证动作的连贯性
-                        location.reload();
-                    } else {
-                        //用户没有登录
-                        alert("您尚未登录，请登录");
-                        location.href = "login.html";
-                    }
+                $.get("route/findOne", {rid: rid}, function (route) {
+                    $("#favoriteCount").html("已收藏" + route.count + "次");  // 设置收藏次数
                 });
+
+                // AJAX只能保证一次请求是有效的，不刷一下的话无法保证动作的连贯性
+                location.reload();
+            } else {
+                //用户没有登录
+                alert("您尚未登录，请登录");
+                location.href = "login.html";
             }
+        });
+    }
 
-            // 取消收藏
-            function removeFavorite(){
-                let rid = getParameter("rid");
-                //1. 判断用户是否登录
-                $.get("registUserServlet", {}, function (user) {
-                    if (user) {
-                        //用户登录了
-                        //添加功能
-                        $.get("route/removeFavorite", {rid: rid}, function () {
+    // 取消收藏
+    function removeFavorite() {
+        let rid = getParameter("rid");
+        //1. 判断用户是否登录
+        $.get("registUserServlet", {}, function (user) {
+            if (user) {
+                //用户登录了
+                //添加功能
+                $.get("route/removeFavorite", {rid: rid}, function () {
 
-                        });
+                });
 
-                        $.get("route/isFavorite", {rid: rid}, function (flag) {
-                            // 用户已收藏
-                            if (flag) {
-                                //设置收藏按钮的样式
-                                favor_sel.addClass("already");
-                                favor_sel.attr("disabled", "disabled");
-                                //删除按钮的点击事件
-                                favor_sel.removeAttr("onclick");
+                $.get("route/isFavorite", {rid: rid}, function (flag) {
+                    // 用户已收藏
+                    if (flag) {
+                        //设置收藏按钮的样式
+                        $("#favorite").addClass("already");
+                        $("#favorite").attr("disabled", "disabled");
+                        //删除按钮的点击事件
+                        $("#favorite").removeAttr("onclick");
 
-                                //设置取消收藏按钮的样式
-                                unfavor_sel.removeClass("already");
-                                unfavor_sel.removeAttr("disabled");
-                                //新增按钮的点击事件
-                                unfavor_sel.attr("onclick");
-                            } else {
-                                // 用户未收藏
-                                // 用户没有收藏
-                                // 设置收藏按钮样式
-                                favor_sel.removeClass("already");
-                                favor_sel.removeAttr("disabled");
-                                //新增按钮的点击事件
-                                favor_sel.attr("onclick");
-                                // 设置取消收藏样式
-                                unfavor_sel.addClass("already");
-                                unfavor_sel.attr("disabled", "disabled");
-                                //删除掉取消按钮的点击事件
-                                unfavor_sel.removeAttr("onclick");
-                            }
-                        });
-
-                        $.get("route/findOne", {rid: rid}, function (route) {
-                            $("#favoriteCount").html("已收藏" + route.count + "次");  // 设置收藏次数
-                        });
-                        // AJAX只能保证一次请求是有效的，不刷一下的话无法保证动作的连贯性
-                        location.reload();
+                        //设置取消收藏按钮的样式
+                        $("#unfavorite").removeClass("already");
+                        $("#unfavorite").removeAttr("disabled");
+                        //新增按钮的点击事件
+                        $("#unfavorite").attr("onclick");
                     } else {
-                        //用户没有登录
-                        alert("您尚未登录，请登录");
-                        location.href = "login.html";
+                        // 用户未收藏
+                        // 用户没有收藏
+                        // 设置收藏按钮样式
+                        $("#favorite").removeClass("already");
+                        $("#favorite").removeAttr("disabled");
+                        //新增按钮的点击事件
+                        $("#favorite").attr("onclick");
+                        // 设置取消收藏样式
+                        $("#unfavorite").addClass("already");
+                        $("#unfavorite").attr("disabled", "disabled");
+                        //删除掉取消按钮的点击事件
+                        $("#unfavorite").removeAttr("onclick");
                     }
                 });
+
+                $.get("route/findOne", {rid: rid}, function (route) {
+                    $("#favoriteCount").html("已收藏" + route.count + "次");  // 设置收藏次数
+                });
+                // AJAX只能保证一次请求是有效的，不刷一下的话无法保证动作的连贯性
+                location.reload();
+            } else {
+                //用户没有登录
+                alert("您尚未登录，请登录");
+                location.href = "login.html";
             }
-        </script>
-    </body>
+        });
+    }
+</script>
+</body>
 </html>

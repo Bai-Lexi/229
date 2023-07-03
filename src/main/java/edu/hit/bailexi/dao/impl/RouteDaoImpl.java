@@ -25,8 +25,6 @@ public class RouteDaoImpl implements RouteDao {
 
             if ((result = template.queryForObject(sql, Integer.class, cid)) != null) {
                 return result;
-            } else {
-                return 0;
             }
         }
         if(!rname.equals("null") && rname.length()>0){
@@ -35,8 +33,6 @@ public class RouteDaoImpl implements RouteDao {
             sql=sb.toString();
             if ((result = template.queryForObject(sql, Integer.class, rname)) != null) {
                 return result;
-            } else {
-                return 0;
             }
         }
 
