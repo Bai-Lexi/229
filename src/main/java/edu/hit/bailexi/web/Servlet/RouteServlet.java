@@ -45,7 +45,7 @@ public class RouteServlet extends BaseServlet {
             currentPage = 1;
         }
 
-        int pageSize = 0;//每页显示条数，不传递默认五条
+        int pageSize = 0;//每页显示条数，不传递默认六条
         if (pageSizeStr != null && pageSizeStr.length() > 0) {
             pageSize = Integer.parseInt(pageSizeStr);
         } else {

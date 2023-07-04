@@ -61,7 +61,6 @@
     $(function () {
         // 查询登录用户信息
         $.get("user/findOne", {}, function (data) {
-            //{uid:1,name:'李四'}
             if (data != null){
                 let msg = "<span id=\"span_username\">" + "欢迎回来，" + data.name + "</span>\n" +
                     "<a href=\"myfavorite.html\" class=\"collection\">我的收藏</a>\n" +
@@ -86,7 +85,7 @@
             $("#category").html(lis);
         });
 
-        $("#search-button").click(function (){
+        $("#category").click(function (){
             var rname=$("#search_input").val();
             location.href="http://localhost:8080/travel/route_list.html?cid=0&rname="+rname;
         })

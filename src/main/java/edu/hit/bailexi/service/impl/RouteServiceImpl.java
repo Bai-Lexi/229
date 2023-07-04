@@ -14,14 +14,14 @@ import edu.hit.bailexi.service.RouteService;
 import java.util.List;
 
 public class RouteServiceImpl implements RouteService {
-    private RouteDao routeDao = (RouteDao) new RouteDaoImpl();
+    private RouteDao routeDao = new RouteDaoImpl();
     private RouteImgDao routeImgDao = new RouteImgDaoImpl();
     private SellerDao sellerDao = new SellerDaoImpl();
     private CategoryDao categoryDao = new CategoryDaoImpl();
     @Override
     public PageBean<Route> PageQuery(int cid, int currentPage, int pageSize, String rname) {
         //封装PageBean
-        PageBean<Route> pb = new PageBean<Route>();
+        PageBean<Route> pb = new PageBean<>();
         //设置当前页码
         pb.setCurrentPage(currentPage);
         //设置每页显示条数
@@ -46,19 +46,22 @@ public class RouteServiceImpl implements RouteService {
 
     @Override
     public Route findOne(String rid) {
-        //1.根据id去route中查询route对象
-        Route route = routeDao.findOne(Integer.parseInt(rid));
-        //2.根据route的id查询图片集合信息
-        List<RouteImg>routeImgList = routeImgDao.findByRid(Integer.parseInt(rid));
-        //2.2将集合设置到route对象
-        route.setRouteImgList(routeImgList);
-        //3.根据route的sid(商家)查询卖家的信息
-        Seller seller = sellerDao.findById(route.getSid());
-        route.setSeller(seller);
-        //4.根据route的cid查找分类
-        Category category = categoryDao.findByCid(route.getCid());
-        route.setCategory(category);
-        return route;
+        if (rid != null){
+            //1.根据id去route中查询route对象
+            Route route = routeDao.findOne(Integer.parseInt(rid));
+            //2.根据route的id查询图片集合信息
+            List<RouteImg>routeImgList = routeImgDao.findByRid(Integer.parseInt(rid));
+            //2.2将集合设置到route对象
+            route.setRouteImgList(routeImgList);
+            //3.根据route的sid(商家)查询卖家的信息
+            Seller seller = sellerDao.findById(route.getSid());
+            route.setSeller(seller);
+            //4.根据route的cid查找分类
+            Category category = categoryDao.findByCid(route.getCid());
+            route.setCategory(category);
+            return route;
+        }
+        return null;
     }
 
 }
