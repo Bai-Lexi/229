@@ -74,4 +74,15 @@ public class RouteDaoImpl implements RouteDao {
 
         template.update(sql,count,rid);
     }
+
+    @Override
+    public List<Route> findFavouriteRank(int pagesize) {
+        String sql = "SELECT rid, rname, price, routeIntroduce, rflag, rdate, \n" +
+                "isThemeTour, count, cid, rimage, sid, sourceId FROM \n" +
+                "tab_route tabr NATURAL JOIN (SELECT rid, count(*) \n" +
+                "as num_favor FROM tab_favorite GROUP BY rid) cour \n" +
+                "ORDER BY num_favor DESC LIMIT 0, ?;";
+
+        return template.query(sql,new BeanPropertyRowMapper<>(Route.class), pagesize);
+    }
 }

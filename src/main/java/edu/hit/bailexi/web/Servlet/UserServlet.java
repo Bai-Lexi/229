@@ -1,10 +1,7 @@
 package edu.hit.bailexi.web.Servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.hit.bailexi.domain.Favorite;
-import edu.hit.bailexi.domain.PageBean;
-import edu.hit.bailexi.domain.ResultInfo;
-import edu.hit.bailexi.domain.User;
+import edu.hit.bailexi.domain.*;
 import edu.hit.bailexi.service.FavoriteService;
 import edu.hit.bailexi.service.UserService;
 import edu.hit.bailexi.service.impl.FavoriteServiceImpl;
@@ -146,5 +143,10 @@ public class UserServlet extends BaseServlet {
 
     }
 
+    public void favouriteRank (HttpServletRequest request, HttpServletResponse response) throws IOException{
+        int pageSize = 10;
+        PageBean<Route> pageBean = favor_service.favouriteRank(pageSize);
+        writeValue(pageBean,response);
+    }
 
 }

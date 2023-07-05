@@ -19,4 +19,6 @@ public interface RouteDao {
     Route findOne(int rid);
 
     void updateFavoriteCount(String rid,Integer count);
+
+    List<Route> findFavouriteRank(int pagesize);
 }

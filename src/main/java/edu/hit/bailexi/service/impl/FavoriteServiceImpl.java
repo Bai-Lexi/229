@@ -52,7 +52,6 @@ public class FavoriteServiceImpl implements FavoriteService {
         PageBean<Favorite> pageBean = new PageBean<>();
         List<Favorite> myFavorite = new ArrayList<>();
 
-        System.out.println(user.getUid());
         // 调用favoriteDao中查询总线路条数
         int totalCount = favoriteDao.findTotalCountByUid(user.getUid());
 
@@ -83,7 +82,6 @@ public class FavoriteServiceImpl implements FavoriteService {
             myFavorite.add(favorite);
         }
 
-        System.out.println(myFavorite.size());
         // 封装pageBean对象
         pageBean.setTotalCount(totalCount);
         pageBean.setTotalPage(totalPage);
@@ -93,6 +91,19 @@ public class FavoriteServiceImpl implements FavoriteService {
         return pageBean;
     }
 
+    @Override
+    public PageBean<Route> favouriteRank(int pageSize) {
+        PageBean<Route> pageBean = new PageBean<>();
+        List<Route> favouriteRankList;
+        favouriteRankList = routeDao.findFavouriteRank(pageSize);
+
+        pageBean.setTotalCount(1);
+        pageBean.setTotalPage(1);
+        pageBean.setCurrentPage(1);
+        pageBean.setPageSize(pageSize);
+        pageBean.setList(favouriteRankList);
+        return pageBean;
+    }
 
 
 }
