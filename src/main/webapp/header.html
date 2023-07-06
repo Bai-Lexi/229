@@ -63,7 +63,7 @@
         $.get("user/findOne", {}, function (data) {
             if (data != null){
                 let msg = "<span id=\"span_username\">" + "欢迎回来，" + data.name + "</span>\n" +
-                    "<a href=\"myfavorite.html\" class=\"collection\">我的收藏</a>\n" +
+                    "<a href=\"myfavorite.html\" class=\"collection\">购物车</a>\n" +
                     "<a href=\"javascript:location.href='user/exit'\">退出</a>";
                 $(".login").html(msg);
             }
@@ -79,13 +79,19 @@
             }
 
             //拼接收藏排行榜
-            lis += '<li><a href="favoriterank.html">收藏排行榜</a></li>'
+            lis += '<li><a href="favoriterank.html">畅销榜</a></li>'
 
             //将lis字符串设置到ul的html内容中
             $("#category").html(lis);
         });
 
         $("#category").click(function (){
+            var rname=$("#search_input").val();
+            //alert(rname);
+            location.href="http://localhost:8080/travel/route_list.html?cid=0&rname="+rname;
+        })
+
+        $("#search-button").click(function (){
             var rname=$("#search_input").val();
             location.href="http://localhost:8080/travel/route_list.html?cid=0&rname="+rname;
         })

@@ -42,9 +42,9 @@
                 <p class="collect">
                     <a class="btn" id="buynow" href="buynow.html">立即购买</a>
                     <a class="btn" id="favorite" onclick="addFavorite()"><i
-                            class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>
+                            class="glyphicon glyphicon-heart-empty"></i>加入购物车</a>
                     <a class="btn" id="unfavorite" onclick="removeFavorite()"><i
-                            class="glyphicon glyphicon-heart-empty"></i>取消收藏</a>
+                            class="glyphicon glyphicon-heart-empty"></i>移除购物车</a>
                     <!--<a class="btn already" disabled="disabled"><i class="glyphicon glyphicon-heart-empty"></i>点击收藏</a>-->
                     <span id="favoriteCount"></span>
                 </p>
@@ -52,25 +52,26 @@
         </div>
     </div>
     <div class="you_need_konw">
-        <span>商品介绍</span>
+        <span>bing测评</span>
         <div class="notice">
-            <ul class="parameter2 p-parameter-list">
-                <li title="华为P60">商品名称：华为P60</li>
-                <li class="shieldShopInfo" title="100054651293">商品编号：100054651293</li>
-                <li title="0.53kg">商品毛重：0.53kg</li>
-                <li title="中国大陆">商品产地：中国大陆</li>
-                <li title="骁龙8系列 4G">CPU型号：骁龙8系列 4G</li>
-                <li title="8GB">运行内存：8GB</li>
-                <li title="洛可可白">机身颜色：洛可可白</li>
-                <li title="IP68">三防标准：IP68</li>
-                <li title="FHD+">屏幕分辨率：FHD+</li>
-                <li title="50-79W">充电功率：50-79W</li>
-                <li title="256GB">机身内存：256GB</li>
-                <li title="混合色系">机身色系：混合色系</li>
-                <li title="OLED曲面屏">屏幕材质：OLED曲面屏</li>
-                <li title="4800万像素">后摄主像素：4800万像素</li>
-                <li title="商务，炫彩，大气">风格：商务，炫彩，大气</li>
-            </ul>
+            <iframe id="myIframe" src="https://www.bing.com/search?q=我" width=100% height="500" frameborder="0"></iframe>
+<!--            <ul class="parameter2 p-parameter-list">-->
+<!--                <li title="华为P60">商品名称：华为P60</li>-->
+<!--                <li class="shieldShopInfo" title="100054651293">商品编号：100054651293</li>-->
+<!--                <li title="0.53kg">商品毛重：0.53kg</li>-->
+<!--                <li title="中国大陆">商品产地：中国大陆</li>-->
+<!--                <li title="骁龙8系列 4G">CPU型号：骁龙8系列 4G</li>-->
+<!--                <li title="8GB">运行内存：8GB</li>-->
+<!--                <li title="洛可可白">机身颜色：洛可可白</li>-->
+<!--                <li title="IP68">三防标准：IP68</li>-->
+<!--                <li title="FHD+">屏幕分辨率：FHD+</li>-->
+<!--                <li title="50-79W">充电功率：50-79W</li>-->
+<!--                <li title="256GB">机身内存：256GB</li>-->
+<!--                <li title="混合色系">机身色系：混合色系</li>-->
+<!--                <li title="OLED曲面屏">屏幕材质：OLED曲面屏</li>-->
+<!--                <li title="4800万像素">后摄主像素：4800万像素</li>-->
+<!--                <li title="商务，炫彩，大气">风格：商务，炫彩，大气</li>-->
+<!--            </ul>-->
         </div>
     </div>
 </div>
@@ -86,6 +87,12 @@
 <script type="text/javascript" src="js/include.js"></script>
 <script src="js/getParameter.js"></script>
 <script>
+
+    // var x=document.getElementById("detail");
+    // var q=x.innerHTML;
+    // //如果没有这个设置，只改变src的值则不会加载页面内容
+    // document.getElementById("myIframe").contentWindow.location.reload(true);
+    // document.getElementById("myIframe").src = 'https://cn.bing.com/search?q='+q;
 
     let picindex = 0;
     let nextindex = 4;
@@ -107,7 +114,13 @@
             $("#consphone").html(route.seller.consphone);
             $("#address").html(route.seller.address);
             // 设置收藏次数
-            $("#favoriteCount").html("已收藏" + route.count + "次");
+            $("#favoriteCount").html("销售量：" + route.count + "次");
+
+            //bing搜索
+            var q=route.rname;
+            document.getElementById("myIframe").contentWindow.location.reload(true);
+            document.getElementById("myIframe").src = 'https://cn.bing.com/search?q='+q;
+
 
             //3. 图片展示
             //3.1大图片展示
